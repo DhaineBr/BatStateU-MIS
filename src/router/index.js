@@ -1,4 +1,5 @@
 import { createRouter, createWebHistory } from 'vue-router';
+import mainmenuVue from '@/components/pages/mainmenu.vue';
 import LandingPage from '../components/landing-page.vue';
 import profileVue from '@/components/pages/profile.vue';
 import dashboardVue from '@/components/pages/dashboard.vue';
@@ -47,9 +48,14 @@ const router = createRouter({
               component: pbbVue
             },
             {
-              path: '/landing/offices'
+              path: '/landing/offices',
               name: 'offices',
               component:  officesVue
+            },
+            {
+              path: '/landing/mainmenu',
+              name: 'mainmenu',
+              component:  mainmenuVue
             }
           ]
         },

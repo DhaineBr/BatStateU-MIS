@@ -1,5 +1,166 @@
 <script></script>
 <template>
-    Profile
+    <div class="left">
+        <div class="visualization">
+            <div class="header">
+                OFFICE OF
+            </div>
+            <div class="campus">
+                Campus: Central
+            </div>
+            <div class="submissions">
+                <div class="title">Submissions</div>
+                <div class="card-container">
+                    <div class="card">
+                        <div class="qpro">QPRO</div>
+                        <div class="text">Quarterly</div>
+                    </div>
+                    <div class="card">
+                        <div class="pbb">PBB</div>
+                        <div class="text">Performance Based Bonus</div>
+                    </div>
+                </div>
+            </div>
+            <div class="perf-stats">
+                <div class="title">Performance Statistics</div>
+            </div>
+        </div>
+        <div class="summary">
+            <div class="summary-header">
+                MIS Office: Summary of data
+            </div>
+        </div>
+    </div>
+    <div class="right">
+        <div class="calendar">
+
+        </div>
+        <div class="activities">
+
+        </div>
+    </div>
 </template>
-<style scoped></style>
+<style scoped>
+
+*   {
+    border: hidden;
+    outline: none;
+}
+
+/* Left Side */
+.left   {
+    width: 75vw;
+    height: 90vh;
+    float: left;
+}
+
+.header {
+    font-size: 2vw;
+    color: #94080D;
+    font-weight: 700;
+}
+
+.campus {
+    font-size: 1.5vw;
+    font-weight: 400;
+}
+.submissions    {
+    height: 15vh;
+    padding: 0 0 0 2.5%;
+}
+
+.card-container {
+    display: flex;
+    flex-direction: row;
+}
+.card   {
+    border: solid;
+    border-radius: 0.5rem;
+    width: 20vw;
+    background-color: white;
+    margin: 0 5% 0 0;
+    display: flex;
+    flex-direction: row;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+}
+
+.qpro, .pbb {
+    float: left;
+    width: 40%;
+    font-size: 2.25vw;
+    font-weight: 700;
+    color: #94080D;
+}
+
+.text   {
+    float: right;
+    width: 60%;
+    text-align: left;
+    line-height: 1;
+    font-size: 1.15vw;
+}
+
+.perf-stats {
+    height: 35vh;
+    padding: 0 0 0 2.5%;
+}
+
+.visualization  {
+    height: 50vh;
+}
+
+.title  {
+    font-weight: 900;
+    color: #94080D;
+    font-size: 1vw;
+    width: 100%;
+}
+
+
+.summary    {
+    height: 40vh;
+}
+
+.summary-header {
+    background-color: #94080D;
+    color: white;
+    height: 5vh;
+    font-size: 1vw;
+}
+
+.title, .summary-header, .header, .campus   {
+    align-items: center;
+    justify-content: left;
+    display: flex;
+}
+
+.summary-header, .header, .campus   {
+    padding: 0 0 0 2.5%;
+}
+
+
+
+/* Right Side */
+.right   {
+    width: 25vw;
+    height: 90vh;
+    float: right;
+}
+
+.calendar   {
+    height: 40vh;
+}
+
+.activities {
+    height: 50vh
+}
+
+.calendar, .activities  {
+    box-shadow: rgba(0, 0, 0, 0.16) 0rem 0.0625rem 0.25rem;
+}
+
+
+</style>
