@@ -1,4 +1,13 @@
-<script></script>
+<script>
+    export default {
+        methods: {
+            goToPbbdashboard() {
+            this.$router.push({ name: 'pbbdashboard' });
+            }
+        }
+    };
+</script>
+
 <template>
     <div class="left">
         <div class="visualization">
@@ -15,14 +24,19 @@
                         <div class="qpro">QPRO</div>
                         <div class="text">Quarterly</div>
                     </div>
-                    <div class="card">
+                    <div class="card" @click="goToPbbdashboard">
                         <div class="pbb">PBB</div>
-                        <div class="text">Performance Based Bonus</div>
+                        <div class="text">Performance Based Bonus (Q3)</div>
                     </div>
                 </div>
             </div>
             <div class="perf-stats">
                 <div class="title">Performance Statistics</div>
+                <div class="chart-container">
+                    <div class="chart-one"></div>
+                    <div class="chart-two"></div>
+                    <div class="chart-three"></div>
+                </div>
             </div>
         </div>
         <div class="summary">
@@ -33,10 +47,10 @@
     </div>
     <div class="right">
         <div class="calendar">
-
+            
         </div>
         <div class="activities">
-
+            <div class="title">Activities</div>
         </div>
     </div>
 </template>
@@ -74,7 +88,6 @@
     flex-direction: row;
 }
 .card   {
-    border: solid;
     border-radius: 0.5rem;
     width: 20vw;
     background-color: white;
@@ -85,6 +98,7 @@
     align-items: center;
     justify-content: center;
     cursor: pointer;
+    box-shadow: rgba(0, 0, 0, 0.15) 0.121875rem 0.121875rem 0.1625rem;
 }
 
 .qpro, .pbb {
@@ -101,6 +115,7 @@
     text-align: left;
     line-height: 1;
     font-size: 1.15vw;
+    color: black
 }
 
 .perf-stats {
@@ -119,6 +134,19 @@
     width: 100%;
 }
 
+.chart-container    {
+    display: flex;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+    flex-direction: row;
+    height: 20vh;
+}
+.chart-one, .chart-two, .chart-three    {
+    width: 30%;
+    margin: auto;
+    height: 15vh;
+}
 
 .summary    {
     height: 40vh;
@@ -155,7 +183,8 @@
 }
 
 .activities {
-    height: 50vh
+    height: 50vh;
+    padding: 2.5% 0 0 2.5%;
 }
 
 .calendar, .activities  {

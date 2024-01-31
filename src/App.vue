@@ -58,7 +58,9 @@ const handleLogin = () => {
   font-family: 'Inter', sans-serif;
   background-color: #F5F5F5;
   outline: none;
-  overflow: hidden;
+  overflow: scroll;
+  scrollbar-width: thin;
+  scrollbar-color: #d4d4d4 #f0f0f0; 
 }
 
 .login  {
@@ -94,7 +96,6 @@ span  {
   color: #EC061D;
   font-weight: 600;
 }
-
 
 
 /* Right Side */
@@ -147,7 +148,6 @@ button {
   background-color: white;
 }
 
-
 ::placeholder {
   font-weight: 100;
   opacity: 0.5;
@@ -156,8 +156,18 @@ button {
   height: 100vh;
 }
 
-/* temp */
-a {
-  background-color: transparent;
+
+*::-webkit-scrollbar {
+  width: 1rem;
 }
+
+*::-webkit-scrollbar-thumb {
+  background-color: #d4d4d4; 
+  border-radius: 0.5rem; 
+}
+
+*::-webkit-scrollbar-track {
+  background-color: #f0f0f0;    
+}
+
 </style>

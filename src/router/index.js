@@ -1,9 +1,10 @@
 import { createRouter, createWebHistory } from 'vue-router';
 import mainmenuVue from '@/components/pages/mainmenu.vue';
 import LandingPage from '../components/landing-page.vue';
-import profileVue from '@/components/pages/profile.vue';
-import dashboardVue from '@/components/pages/dashboard.vue';
-import datasetVue from '@/components/pages/dataset.vue';
+import profileVue from '@/components/pages/profile/profile.vue';
+import pbbdashboardVue from '@/components/pages/profile/pbbdashboard.vue'
+import dashboardVue from '@/components/pages/dashboard/dashboard.vue';
+import datasetVue from '@/components/pages/dataset/dataset.vue';
 import officesVue from '@/components/pages/offices.vue';
 import pbbVue from '@/components/pages/pbb.vue';
 import AppVue from '@/App.vue';
@@ -19,7 +20,7 @@ const router = createRouter({
           path: '',
           name: 'login',
           component: {
-            render: () => null, // Render nothing for the parent route
+            render: () => null, 
           },
         },
         {
@@ -30,7 +31,12 @@ const router = createRouter({
             {
               path: '/landing/profile',
               name: 'profile',
-              component: profileVue
+              component: profileVue,
+            },
+            {
+              path: 'landing/pbbdashboard',
+              name: 'pbbdashboard',
+              component: pbbdashboardVue
             },
             {
               path: '/landing/dashboard',
