@@ -1,10 +1,21 @@
 import { createRouter, createWebHistory } from 'vue-router';
-import mainmenuVue from '@/components/pages/mainmenu.vue';
 import LandingPage from '../components/landing-page.vue';
+import mainmenuVue from '@/components/pages/mainmenu.vue';
+
 import profileVue from '@/components/pages/profile/profile.vue';
-import pbbdashboardVue from '@/components/pages/profile/pbbdashboard.vue'
+import pbbdashboardVue from '@/components/pages/profile/pbbdashboard.vue';
+
 import dashboardVue from '@/components/pages/dashboard/dashboard.vue';
+import overviewVue from '@/components/pages/dashboard/overview.vue';
+import qsstarsVue from '@/components/pages/dashboard/qsstars.vue';
+import theVue from '@/components/pages/dashboard/the.vue';
+import scopusVue from '@/components/pages/dashboard/scopus.vue';
+import altmetricVue from '@/components/pages/dashboard/altmetric.vue';
+import misfactbookVue from '@/components/pages/dashboard/misfactbook.vue';
+import studentfactbookVue from '@/components/pages/dashboard/studentfactbook.vue';
+
 import datasetVue from '@/components/pages/dataset/dataset.vue';
+
 import officesVue from '@/components/pages/offices.vue';
 import pbbVue from '@/components/pages/pbb.vue';
 import AppVue from '@/App.vue';
@@ -41,7 +52,44 @@ const router = createRouter({
             {
               path: '/landing/dashboard',
               name: 'dashboard',
-              component: dashboardVue
+              component: dashboardVue,
+              children: [
+                {
+                  path: '/landing/dashboard/overview',
+                  name: 'overview',
+                  component: overviewVue
+                },
+                {
+                  path: '/landing/dashboard/qsstars',
+                  name: 'qsstars',
+                  component: qsstarsVue
+                },
+                {
+                  path: '/landing/dashboard/the',
+                  name: 'the',
+                  component: theVue
+                },
+                {
+                  path: '/landing/dashboard/scopus',
+                  name: 'scopus',
+                  component: scopusVue
+                },
+                {
+                  path: '/landing/dashboard/altmetric',
+                  name: 'altmetric',
+                  component: altmetricVue
+                },
+                {
+                  path: '/landing/dashboard/misfactbook',
+                  name: 'misfactbook',
+                  component: misfactbookVue
+                },
+                {
+                  path: '/landing/dashboard/studentfactbook',
+                  name: 'studentfactbook',
+                  component: studentfactbookVue
+                }
+              ]
             },
             {
               path: '/landing/dataset',

@@ -5,8 +5,6 @@ import { useRouter } from 'vue-router';
 const router = useRouter();
 
 const handleLogin = () => {
-
-  // Redirect to the landing page
   router.push({ name: 'landing' });
 }
 </script>
@@ -59,8 +57,6 @@ const handleLogin = () => {
   background-color: #F5F5F5;
   outline: none;
   overflow: scroll;
-  scrollbar-width: thin;
-  scrollbar-color: #d4d4d4 #f0f0f0; 
 }
 
 .login  {
@@ -156,17 +152,21 @@ button {
   height: 100vh;
 }
 
-
-*::-webkit-scrollbar {
-  width: 1rem;
+template  {
+  scrollbar-width: thin;
+  scrollbar-color: #d4d4d4 #f0f0f0; 
 }
 
-*::-webkit-scrollbar-thumb {
+template::-webkit-scrollbar {
+  width: 0.25rem;
+}
+
+template::-webkit-scrollbar-thumb {
   background-color: #d4d4d4; 
-  border-radius: 0.5rem; 
+  border-radius: 0.25rem; 
 }
 
-*::-webkit-scrollbar-track {
+template::-webkit-scrollbar-track {
   background-color: #f0f0f0;    
 }
 

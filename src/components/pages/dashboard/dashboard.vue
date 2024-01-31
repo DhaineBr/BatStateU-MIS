@@ -5,27 +5,43 @@
     <div class="container">
         <div class="nav">
             <div class="left">
-                <div class="header"></div>
-                <div class="text"></div>
+                <div class="header">University Management <br>
+                <span>Information</span> System
+                </div>
+                <div class="footer">
+                Central System for Managing and Processing Data 
+                <br>of Batangas State University  
+                </div>
             </div>
             <div class="right">
-                <div class="nav-buttons"></div>
+                <nav>
+                    <RouterLink to="/landing/dashboard/overview" class="nav-button">Overview</RouterLink>
+                    <RouterLink to="/landing/dashboard/qsstars" class="nav-button">QS Stars</RouterLink>
+                    <RouterLink to="/landing/dashboard/the" class="nav-button">THE</RouterLink>
+                    <RouterLink to="/landing/dashboard/scopus" class="nav-button">Scopus</RouterLink>
+                    <RouterLink to="/landing/dashboard/altmetric" class="nav-button">Altmetric</RouterLink>
+                    <RouterLink to="/landing/dashboard/misfactbook" class="nav-button">...</RouterLink>
+                </nav>
             </div>
         </div>
+    </div>
+    <div class="content">
+        <RouterView /> 
     </div>
 </template>
 
 <style scoped>
+
 .container  {
     display: flex;
     flex-direction: column;
     width: 100vw;
-    height: 600vh;
+    height: 25vh;
 }
 
 /* Navigation */
 .nav, .left, .right    {
-    height: 30vh;
+    height: 25vh;
 }
 
 /* Left or title */
@@ -33,16 +49,67 @@
     float: left;
     width: 50%;
 }
+
+.header {
+  font-weight: bolder;
+  font-size: 2.75vw;
+  color: #94080D;
+  line-height: 1.25;
+  margin: 10% 0 0 0;
+}
+
+.footer  {
+  font-size: 1vw;
+  font-weight: 100;
+  line-height: 1;
+}
+
+span  {
+  color: #EC061D;
+  font-weight: 600;
+}
+
+.content    {
+    height: 65vh;
+}
+
 /* Right or navigation buttons */
 .right  {
     float: right;
     width: 50%;
 }
+
+nav {
+    text-align: right;
+    width: 90%;
+    margin-top: 22.5%;
+}
+.nav-button {
+    color: #94080D;
+    font-size: 1vw;
+    margin: 0 1%;
+    background-color: transparent;
+}
+
+
 /* Global */
 *   {
     border: solid;
     background-color: #F5F5F5;
     outline: none;
+}
+
+.header, .footer    {
+    width: 90%;
+    text-align: left;
+    padding: 0 0 0 5%;
+}
+
+.left, .right   {
+    display: flex;
+    flex-direction: column;
+    justify-content: center; 
+    align-items: center;
 }
 
 </style>
