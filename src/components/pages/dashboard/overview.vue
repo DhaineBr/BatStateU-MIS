@@ -3,5 +3,4 @@
 <template>
     Overview
 </template>
-    
 <style scoped></style>

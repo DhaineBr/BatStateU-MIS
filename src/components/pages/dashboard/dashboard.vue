@@ -89,12 +89,18 @@ nav {
     font-size: 1vw;
     margin: 0 1%;
     background-color: transparent;
+    padding: 1% 1.5%;
+}
+
+.nav-button:active, .nav-button:focus {
+    background-color: #94080D;
+    color: white;
 }
 
 
 /* Global */
 *   {
-    border: solid;
+    border: hidden;
     background-color: #F5F5F5;
     outline: none;
 }

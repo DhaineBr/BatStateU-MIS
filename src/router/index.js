@@ -15,8 +15,9 @@ import misfactbookVue from '@/components/pages/dashboard/misfactbook.vue';
 import studentfactbookVue from '@/components/pages/dashboard/studentfactbook.vue';
 
 import datasetVue from '@/components/pages/dataset/dataset.vue';
+import databaseVue from '@/components/pages/dataset/database.vue';
 
-import officesVue from '@/components/pages/offices.vue';
+import officesVue from '@/components/pages/offices/offices.vue';
 import pbbVue from '@/components/pages/pbb.vue';
 import AppVue from '@/App.vue';
 
@@ -95,6 +96,11 @@ const router = createRouter({
               path: '/landing/dataset',
               name: 'dataset',
               component: datasetVue
+            },
+            {
+              path: '/landing/database',
+              name: 'database',
+              component: databaseVue
             },
             {
               path: '/landing/pbb',
