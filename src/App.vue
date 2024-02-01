@@ -56,7 +56,7 @@ const handleLogin = () => {
   font-family: 'Inter', sans-serif;
   background-color: #F5F5F5;
   outline: none;
-  overflow-y: scroll;
+  overflow-y: auto;
   overflow-x: hidden;
 }
 

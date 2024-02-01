@@ -9,15 +9,16 @@
     "preview": "vite preview"
   },
   "dependencies": {
-    "chart.js": "^3.9.1",
+    "chart.js": "^4.4.1",
     "npm": "^10.4.0",
     "primeicons": "^6.0.1",
     "vue": "^3.3.11",
     "vue-calendar-3": "^2.4.24",
-    "vue-chart-3": "^3.1.8",
+    "vue-chartjs": "^5.3.0",
     "vue-router": "^4.2.5"
   },
   "devDependencies": {
+    "@mdi/font": "^7.4.47",
     "@vitejs/plugin-vue": "^4.5.2",
     "vite": "^5.0.10"
   }

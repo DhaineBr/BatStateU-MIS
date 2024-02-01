@@ -7,12 +7,16 @@ import pbbdashboardVue from '@/components/pages/profile/pbbdashboard.vue';
 
 import dashboardVue from '@/components/pages/dashboard/dashboard.vue';
 import overviewVue from '@/components/pages/dashboard/overview.vue';
-import qsstarsVue from '@/components/pages/dashboard/qsstars.vue';
+import barChartOneVue from '@/components/pages/charts/facultyProfile/academicRank.vue';
+import barChartTwoVue from '@/components/pages/charts/facultyProfile/development.vue';
+import barChartThree from '@/components/pages/charts/facultyProfile/campusAndDegree.vue';
+
+import qsStarsVue from '@/components/pages/dashboard/qsStars.vue';
 import theVue from '@/components/pages/dashboard/the.vue';
 import scopusVue from '@/components/pages/dashboard/scopus.vue';
 import altmetricVue from '@/components/pages/dashboard/altmetric.vue';
-import misfactbookVue from '@/components/pages/dashboard/misfactbook.vue';
-import studentfactbookVue from '@/components/pages/dashboard/studentfactbook.vue';
+import misfactbookVue from '@/components/pages/dashboard/misFactbook.vue';
+import studentfactbookVue from '@/components/pages/dashboard/studentFactbook.vue';
 
 import datasetVue from '@/components/pages/dataset/dataset.vue';
 import databaseVue from '@/components/pages/dataset/database.vue';
@@ -58,12 +62,29 @@ const router = createRouter({
                 {
                   path: '/landing/dashboard/overview',
                   name: 'overview',
-                  component: overviewVue
+                  component: overviewVue,
+                  children: [
+                    {
+                      path: '/landing/dashboard/overview/barchartone',
+                      name: 'barchartone',
+                      component: barChartOneVue
+                    },
+                    {
+                      path: '/landing/dashboard/overview/barcharttwo',
+                      name: 'barcharttwo',
+                      component: barChartTwoVue
+                    },
+                    {
+                      path: '/landing/dashboard/overview/barchartthree',
+                      name: 'barchartthree',
+                      component: barChartThree
+                    }
+                  ]
                 },
                 {
                   path: '/landing/dashboard/qsstars',
                   name: 'qsstars',
-                  component: qsstarsVue
+                  component: qsStarsVue
                 },
                 {
                   path: '/landing/dashboard/the',
