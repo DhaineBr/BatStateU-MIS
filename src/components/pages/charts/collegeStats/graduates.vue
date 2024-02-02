@@ -5,18 +5,18 @@ import { Doughnut } from 'vue-chartjs'
 ChartJS.register(ArcElement, Tooltip, Legend)
 
 export default {
-  name: 'DoughnutChartOne',
+  name: 'DoughnutChartTwo',
   components: {
     Doughnut
   },
   data() {
     return  {
       chartData: {   
-        labels: ['Male', 'Female'],
+        labels: ['Main Campus', 'Alangilan Campus', 'Extension Campuses'],
         datasets: [
           {
-            backgroundColor: ['#EC061D', '#06ECC3'],
-            data: [350, 100],
+            backgroundColor: ['#EC061D', '#E86217', '#06ECC3'],
+            data: [350, 100, 88],
           }
         ]
       },
@@ -25,7 +25,7 @@ export default {
         plugins: {
           title: {
             display: true,
-            text: 'Enrollment',      
+            text: 'Graduate',      
           },
           legend: { display: true,
             position: 'left'    
@@ -40,7 +40,7 @@ export default {
 
 <template>
   <Doughnut 
-    id="DoughnutChartOne"
+    id="DoughnutChartTwo"
     :data="chartData"
     :options="chartOptions" 
   />

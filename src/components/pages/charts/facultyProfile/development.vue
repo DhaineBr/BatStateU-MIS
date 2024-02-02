@@ -17,12 +17,15 @@ export default {
     return {
       chartData: {
         labels: ['Accomplishments', 'Targets'],
+        
         datasets: [
           {
+            backgroundColor: ['#06ECC3'],
             label: '',
             data: [randomNumber1, randomNumber2],
           },
           {
+            backgroundColor: ['#EC061D'],
             label: '',
             data: [randomNumber3, randomNumber4],
           },
@@ -31,6 +34,10 @@ export default {
       chartOptions: {
         responsive: true,
         indexAxis: 'y',
+        scales: {
+          x: {
+            display: false, // Hide x-axis labels
+          }},
         plugins: {
           title: {
             display: true,

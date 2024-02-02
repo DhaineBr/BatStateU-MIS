@@ -1,13 +1,13 @@
 <script>
 import { Chart as ChartJS, ArcElement, Tooltip, Legend } from 'chart.js'
-import { Doughnut } from 'vue-chartjs'
+import { Pie } from 'vue-chartjs'
 
 ChartJS.register(ArcElement, Tooltip, Legend)
 
 export default {
-  name: 'DoughnutChartOne',
+  name: 'PieChartOne',
   components: {
-    Doughnut
+    Pie
   },
   data() {
     return  {
@@ -25,7 +25,7 @@ export default {
         plugins: {
           title: {
             display: true,
-            text: 'Enrollment',      
+            text: 'Scholarship',      
           },
           legend: { display: true,
             position: 'left'    
@@ -39,8 +39,8 @@ export default {
 </script>
 
 <template>
-  <Doughnut 
-    id="DoughnutChartOne"
+  <Pie 
+    id="PieChartOne"
     :data="chartData"
     :options="chartOptions" 
   />

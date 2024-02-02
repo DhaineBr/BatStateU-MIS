@@ -13,7 +13,7 @@ const randomNumber5 = Math.floor(Math.random() * 10) + 1;
 const randomNumber6 = Math.floor(Math.random() * 10) + 1;
 
 export default {
-  name: 'BarChartTwo',
+  name: 'BarChartThree',
   components: { Bar },
   data() {
     return {
@@ -21,14 +21,17 @@ export default {
         labels: ['Doctoral Degree', 'with units in Doctoral', 'Masteral Degree', 'with units in Masteral', 'h'],
         datasets: [
           {
+            backgroundColor: ['#06ECC3'],
             label: '',
             data: [randomNumber1, randomNumber2,  randomNumber3, randomNumber4, randomNumber5]
           },
           {
+            backgroundColor: ['#E86217'],
             label: '',
             data: [randomNumber3, randomNumber4, randomNumber6, randomNumber2, randomNumber5],
           },
           {
+            backgroundColor: ['#CF0412'],
             label: '',
             data: [randomNumber5, randomNumber6, randomNumber1, randomNumber2, randomNumber4],
           },
@@ -37,12 +40,16 @@ export default {
       chartOptions: {
         responsive: true,
         indexAxis: 'x',
+        scales: {
+          y: {
+            display: false,
+          }},
         plugins: {
           title: {
             display: true,
             text: 'Faculty by Campus and Degree',      
           },
-          legend: { display: true },
+          legend: { display: false },
         },
       }
     }

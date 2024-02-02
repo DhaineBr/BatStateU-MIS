@@ -17,11 +17,18 @@ export default {
     return {
       chartData: {
         labels: [ 'Instructor', 'Assistant Professor', 'Associate Professor', 'Professor' ],
-        datasets: [ { data: [randomNumber1, randomNumber2, randomNumber3, randomNumber4] } ]
+        datasets: [ { 
+          backgroundColor:['#CF0412', '#E86217', '#8E04CF', '#04AACF'],
+          data: [randomNumber1, randomNumber2, randomNumber3, randomNumber4] 
+        } ]
       },
       chartOptions: {
         responsive: true,
         indexAxis: 'y',
+        scales: {
+          x: {
+            display: false, // Hide x-axis labels
+          }},
         plugins: {
           title: {
             display: true,

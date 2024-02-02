@@ -7,9 +7,6 @@ import pbbdashboardVue from '@/components/pages/profile/pbbdashboard.vue';
 
 import dashboardVue from '@/components/pages/dashboard/dashboard.vue';
 import overviewVue from '@/components/pages/dashboard/overview.vue';
-import barChartOneVue from '@/components/pages/charts/facultyProfile/academicRank.vue';
-import barChartTwoVue from '@/components/pages/charts/facultyProfile/development.vue';
-import barChartThree from '@/components/pages/charts/facultyProfile/campusAndDegree.vue';
 
 import qsStarsVue from '@/components/pages/dashboard/qsStars.vue';
 import theVue from '@/components/pages/dashboard/the.vue';
@@ -63,23 +60,6 @@ const router = createRouter({
                   path: '/landing/dashboard/overview',
                   name: 'overview',
                   component: overviewVue,
-                  children: [
-                    {
-                      path: '/landing/dashboard/overview/barchartone',
-                      name: 'barchartone',
-                      component: barChartOneVue
-                    },
-                    {
-                      path: '/landing/dashboard/overview/barcharttwo',
-                      name: 'barcharttwo',
-                      component: barChartTwoVue
-                    },
-                    {
-                      path: '/landing/dashboard/overview/barchartthree',
-                      name: 'barchartthree',
-                      component: barChartThree
-                    }
-                  ]
                 },
                 {
                   path: '/landing/dashboard/qsstars',
