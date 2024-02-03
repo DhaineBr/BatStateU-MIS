@@ -1,16 +1,13 @@
 <script></script>
 <template>
-
     <div class="top">
 
     </div>
-
     <div class="left">
         <div class="header">
             Progress
         </div>
     </div>
-    
     <div class="right">
         <div class="header">
             Tasks
@@ -33,7 +30,6 @@
 }
 
 /* Bottom Left side */
-
 .left   {
     float: left;
     height: 65vh;
@@ -41,13 +37,11 @@
 }
 
 /* Bottom right side */
-
 .right  {
     float: right;
     height: 65vh;
     width: 72.5vw;
 }
-
 
 /* Global */
 .header    {
@@ -57,10 +51,8 @@
     font-size: 1.5vw;
     line-height: 2.25;
 }
-
 .left, .right   {
     display: flex;
     flex-direction: column;
 }
-
 </style>

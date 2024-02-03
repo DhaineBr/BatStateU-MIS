@@ -45,7 +45,6 @@
     align-items: center; 
     justify-content: center;
 }
-
 .header {
     font-size: 2vw;
     font-weight: 600;
@@ -61,20 +60,16 @@
     width: 30%;
     height: inherit;
 }
-
 .search {
     background-color: white;
     border-radius: 0.5rem;
     height: 7vh;
     border-width: 0.05rem;
 }
-
-
 .icon   {
     float: left;
     width: 10%;
 }
-
 input[type='text']  {
     float: right;
     width: 90%;
@@ -91,7 +86,6 @@ input[type='text']  {
     height: inherit;
     padding-top: 12vh;
 }
-
 .year, .office, .file-type  {
     height: 20vh;
     display: flex;
@@ -99,7 +93,6 @@ input[type='text']  {
     align-items: center; 
     justify-content: center;
 }
-
 .table-container  {
     float: right;
     width: 80%;
@@ -111,24 +104,20 @@ input[type='text']  {
     border: solid;
     outline: none;
 }
-
 .nav, .content, .search, .search-container {
     display: flex;
     flex-direction: row;
     align-items: center; 
     justify-content: center;
 }
-
 .header, .footer, .search {
     width: 100%;
 }
-
 .icon, input[type='text']   {
     height: 5vh;
     border: hidden;
     background-color: transparent;
 }
-
 ::placeholder   {
     opacity: 0.5;
 }

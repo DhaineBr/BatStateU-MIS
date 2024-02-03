@@ -38,31 +38,26 @@
 </template>
 
 <style scoped>
-
 /* Left Side */
 .left   {
     float: left;
     width: 47.5vw;
     height: 90vh;
 }   
-
 .top {
     color: #94080D;
     height: 20vh;
 }
-
 .title {
     font-size: 2.25vw;
     font-weight: 700;
     width: 85%;
 }
-
 .subtext    {
     font-size: 1.25vw;
     width: 85%;
     line-height: 1;
 }
-
 .box    {
     width: 85%;
     height: 65vh;
@@ -72,7 +67,6 @@
     border-width: 0.05rem;
     box-shadow: rgba(99, 99, 99, 0.2) 0 0.125rem 0.5rem 0rem;
 }
-
 .header {
     height: 10vh;
     width: 90%;
@@ -84,7 +78,6 @@
     color: #94080D;
     font-weight: 500;
 }
-
 .text   {
     height: 55vh;
     width: 90%;
@@ -103,7 +96,6 @@
     align-items: center;
     justify-content: center;
 }
-
 .top-nav {
     display: flex;
     flex-direction: column;
@@ -129,7 +121,6 @@
     box-shadow: rgba(99, 99, 99, 0.2) 0 0.125rem 0.5rem 0rem;
     margin-right: 0
 }
-
 input[type='text']  {
     font-size: 1.25vw;
     padding: 1.5% 4%;
@@ -137,20 +128,17 @@ input[type='text']  {
     height: 4vh;
     background-color: white;
 }
-
 .icon   {
     width: 10%;
     height: 4vh;
     color: black;
     background-color: white;
 }
-
 .link-container {
     width: 87.5%;
     height: 65vh;
     background-color: transparent;
 }
-
 .link   {
     height: 6vh;
     border: solid;
@@ -165,26 +153,21 @@ input[type='text']  {
     background-color: #F5F5F5;
     outline: none;
 }
-
 .top, .bottom, .icon, .box    {
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
 }
-
 .header, .text, ul, li  {
     background-color: transparent;
 }
-
 .bottom {
     height: 70vh;
     color: black;
     width: 100%;
 }
-
 ::placeholder   {
     opacity: 0.5;
 }
-
 </style>
