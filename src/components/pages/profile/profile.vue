@@ -63,7 +63,7 @@
 
 /* Left Side */
 .left   {
-    width: 75vw;
+    width: 75%;
     height: 90vh;
     float: left;
 }
@@ -173,7 +173,7 @@
 
 /* Right Side */
 .right   {
-    width: 25vw;
+    width: 25%;
     height: 90vh;
     float: right;
 }

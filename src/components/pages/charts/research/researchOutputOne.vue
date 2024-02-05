@@ -6,17 +6,17 @@ import { Doughnut } from 'vue-chartjs'
 ChartJS.register(ArcElement, Tooltip, Legend)
 
 export default {
-  name: 'DoughnutChartThree',
+  name:'DoughnutChartThree',
   components: {
     Doughnut
   },
   data() {
     return  {
       chartData: {   
-        labels: ['Male', 'Female'],
+        labels: ['International Publication ', 'National Publication '],
         datasets: [
           {
-            backgroundColor: ['#EC061D', '#06ECC3'],
+            backgroundColor: ['#9A171C', '#06ECC3'],
             data: [350, 100],
           }
         ]

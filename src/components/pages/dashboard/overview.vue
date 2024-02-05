@@ -12,7 +12,7 @@ import PieChartOne from '@/components/pages/charts/collegeStats/scholarship.vue'
 
 
 export default {
-  name: 'barChart',
+  name: 'charts',
   components: { 
     BarChartOne, 
     BarChartTwo, 
@@ -148,7 +148,7 @@ export default {
         <div class="header">Research </div>
         <div class="five-sub">
           <div class="charts">
-          
+            <DoughnutChartThree/>
           </div>
           <div class="figures">
 
@@ -157,7 +157,9 @@ export default {
       </div>
       <div class="box-six">
         <div class="header">Financial Status </div>
-        <div class="six-sub"></div>
+        <div class="six-sub">
+          <BarChartFive/>
+        </div>
       </div>
     </div>
 

@@ -41,7 +41,7 @@
 /* Left Side */
 .left   {
     float: left;
-    width: 47.5vw;
+    width: 47.5%;
     height: 90vh;
 }   
 .top {
@@ -89,7 +89,7 @@
 /* Right Side */
 .right {
     float: right;
-    width: 52.5vw;
+    width: 52.5%;
     height: 90vh;
     display: flex;
     flex-direction: column;

@@ -153,22 +153,13 @@ button {
   height: 100vh;
 }
 
-template  {
+*  {
   scrollbar-width: thin;
   scrollbar-color: #d4d4d4 #f0f0f0; 
 }
 
-template::-webkit-scrollbar {
-  width: 0.25rem;
-}
-
-template::-webkit-scrollbar-thumb {
-  background-color: #d4d4d4; 
-  border-radius: 0.25rem; 
-}
-
-template::-webkit-scrollbar-track {
-  background-color: #f0f0f0;    
+*::-webkit-scrollbar {
+  display: none;
 }
 
 </style>
