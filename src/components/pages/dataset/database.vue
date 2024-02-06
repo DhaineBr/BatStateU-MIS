@@ -25,7 +25,7 @@
                     <div class="head"></div>
                 </div>
             </div>
-            <div class="table-container"><v-data-table :items="items"></v-data-table></div>
+            <div class="table-container"><v-data-table></v-data-table></div>
         </div>
     </div>
 </template>
