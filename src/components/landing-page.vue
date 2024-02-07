@@ -24,20 +24,18 @@
 
 *   {
     border: hidden;
+    outline: none;
 }
-
 .container  {
     width: 100vw;
     height: 100vh;
 }
-
 nav {
     display: flex;
     flex-direction: row;
     height: 10vh;
     background-color: #D00412;
 }
-
 img {
     height: 7vh;
 }
@@ -46,13 +44,11 @@ img {
     text-align: center;
     color: white;
 }
-
 .main   {
     width: 30vw;
     background-color: #94080D;
     font-size: 1.35vw;
 }
-
 .nav-button, .main, .img-container   {
     display: flex;
     flex-direction: row;
@@ -63,12 +59,10 @@ img {
 .img-container  {
     width: 20%;
 }
-
 .nav-button {
     width: 10vw;
     font-size: 1.15vw;
 }
-
 .nav-button:active,
 .nav-button:focus  {
     background-color: #94080D;

@@ -1,12 +1,29 @@
 <script>
-
+import { RouterLink } from 'vue-router';
+import Dashboard from '@/components/pages/dashboard/dashboard.vue'
+export default {
+  components: {
+    RouterLink,
+    Dashboard,
+  },
+  data() {
+    return {
+      isDashboardHidden: false, 
+    };
+  },
+  methods: {
+    hideDashboard() {
+      this.isDashboardHidden = true;
+    },
+  },
+};
 </script>
 <template>
     <div class="container">
         <nav>
             <div class="top">
                 <div class="backdrop"><div class="card">Faculty and Staff Members</div></div>
-                <div class="backdrop"><RouterLink to="/landing/dashboard/studentfactbook"><div class="card">Students</div></RouterLink></div>
+                <div class="backdrop"><RouterLink to="/landing/studentfactbook" class="card" @click="hideDashboard">Students</RouterLink></div>
                 <div class="backdrop"><div class="card">Admissions</div></div>
                 <div class="backdrop"><div class="card">Enrollment</div></div>
                 <div class="backdrop"><div class="card">Graduate Degrees Conferred</div></div>
@@ -27,11 +44,9 @@
 *   {
     border: none;
 }
-
 .container  {
     height: 65vh;
 }
-
 .top, .bottom    {
     height: 32.5vh;
     display: flex;
@@ -39,7 +54,6 @@
     align-items: center;
     justify-content: center;
 }
-
 .card {
   position: absolute;
   bottom: 0;
@@ -56,7 +70,6 @@
   justify-content: center;
   cursor: pointer
 }
-
 .backdrop {
   position: relative; 
   background-color: #DADADA;
@@ -66,6 +79,4 @@
   border-radius: 0.75rem;
   box-shadow: rgba(0, 0, 0, 0.15) 0.15rem 0rem 0.1rem;
 }
-
-
 </style>

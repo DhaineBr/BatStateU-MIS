@@ -87,7 +87,7 @@ const router = createRouter({
                   component: misfactbookVue
                 },
                 {
-                  path: '/landing/dashboard/studentfactbook',
+                  path: '/landing/studentfactbook',
                   name: 'studentfactbook',
                   component: studentfactbookVue
                 }

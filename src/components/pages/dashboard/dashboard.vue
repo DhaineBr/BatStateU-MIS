@@ -31,12 +31,11 @@
 </template>
 
 <style scoped>
-
 .container  {
     display: flex;
     flex-direction: column;
     width: 100vw;
-    height: 25vh;
+    height: 35vh;
 }
 
 /* Navigation */
@@ -49,7 +48,6 @@
     float: left;
     width: 50%;
 }
-
 .header {
   font-weight: bolder;
   font-size: 2.75vw;
@@ -57,18 +55,15 @@
   line-height: 1.25;
   margin: 10% 0 0 0;
 }
-
 .footer  {
   font-size: 1vw;
   font-weight: 100;
   line-height: 1;
 }
-
 span  {
   color: #EC061D;
   font-weight: 600;
 }
-
 .content    {
     height: 65vh;
 }
@@ -78,7 +73,6 @@ span  {
     float: right;
     width: 50%;
 }
-
 nav {
     text-align: right;
     width: 90%;
@@ -91,7 +85,6 @@ nav {
     background-color: transparent;
     padding: 1% 1.5%;
 }
-
 .nav-button:active, .nav-button:focus {
     background-color: #94080D;
     color: white;
@@ -104,18 +97,15 @@ nav {
     background-color: #F5F5F5;
     outline: none;
 }
-
 .header, .footer    {
     width: 90%;
     text-align: left;
     padding: 0 0 0 5%;
 }
-
 .left, .right   {
     display: flex;
     flex-direction: column;
     justify-content: center; 
     align-items: center;
 }
-
 </style>

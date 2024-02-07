@@ -1,14 +1,11 @@
 <script>
 import OverallData from '@/components/pages/charts/performanceStats/overallData.vue'
 import PbbGrading from '@/components/pages/charts/performanceStats/pbbGrading.vue'
-import ProgressBar from 'primevue/progressbar';
-
 
 export default {
     components: {
         OverallData,
         PbbGrading,
-        ProgressBar
     },
     methods: {
         goToPbbdashboard() {
@@ -45,7 +42,17 @@ export default {
                 <div class="chart-container">
                     <div class="chart-one"><OverallData /></div>
                     <div class="chart-two"><PbbGrading /></div>
-                    <div class="chart-three"><ProgressBar :value="50"></ProgressBar></div>
+                    <div class="chart-three"> 
+                        <select v-model="selectedOption" placeholder="2023">
+                            <option value="option1">Option 1</option>
+                            <option value="option2">Option 2</option>
+                            <option value="option3">Option 3</option>
+                        </select>
+                        <progress max="100" :value="100" class="progress-bar"></progress>
+                        <progress max="100" :value="100" class="progress-bar"></progress>
+                        <progress max="100" :value="50" class="progress-bar"></progress>
+                        <progress max="100" :value="0" class="progress-bar"></progress>
+                    </div>
                 </div>
             </div>
         </div>
@@ -65,23 +72,6 @@ export default {
     </div>
 </template>
 <style scoped>
-*   {
-    border: hidden;
-    outline: none;
-}
-.perf-stats {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-}
-.card, .chart-container {
-    display: flex;
-    text-align: center;
-    align-items: center;
-    justify-content: center;
-    flex-direction: row;
-}
 /* Left Side */
 .left   {
     width: 75%;
@@ -190,5 +180,37 @@ export default {
 }
 .calendar, .activities  {
     box-shadow: rgba(0, 0, 0, 0.16) 0rem 0.0625rem 0.25rem;
+}
+
+/* Global */
+*   {
+    border: solid;
+    outline: none;
+    border-width: 0.01rem;
+}
+.perf-stats {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+.card, .chart-container {
+    display: flex;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+    flex-direction: row;
+}
+.progress-bar   {
+    width: 20vw;
+    height: 2.5vh
+}
+.progress-bar::-webkit-progress-bar {
+    background-color: #D9D9D9;
+    border-radius: 1rem;
+}
+.progress-bar::-webkit-progress-value {
+    background-color: #D00412;
+    border-radius: 1rem;
 }
 </style>

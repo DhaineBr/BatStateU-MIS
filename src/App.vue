@@ -1,5 +1,4 @@
 <script setup>
-
 import { useRouter } from 'vue-router';
 
 const router = useRouter();
@@ -50,7 +49,6 @@ const handleLogin = () => {
 </template>
 
 <style scoped>
-
 * {
   border: hidden;
   font-family: 'Inter', sans-serif;
@@ -59,12 +57,10 @@ const handleLogin = () => {
   overflow-y: auto;
   overflow-x: hidden;
 }
-
 .login  {
   width: 100vw;
   height: 100vh;
 }
-
 
 /* Left Side */
 .welcome  {
@@ -72,7 +68,6 @@ const handleLogin = () => {
   float: left;
   background-color: transparent;
 }
-
 .header {
   font-weight: bolder;
   font-size: 2.75vw;
@@ -81,19 +76,16 @@ const handleLogin = () => {
   margin: 60vh 0 0 0;
   line-height: 1.25;
 }
-
 .footer  {
   padding: 0 0 0 10%;
   font-size: 1vw;
   font-weight: 100;
   line-height: 1;
 }
-
 span  {
   color: #EC061D;
   font-weight: 600;
 }
-
 
 /* Right Side */
 .login-window {
@@ -106,12 +98,10 @@ span  {
   justify-content: center;
   margin: auto;
 }
-
 h2  {
   background-color: transparent;
   margin: 50% 0 0 0;
 }
-
 .input-fields {
   width: 100%;
   display: flex;
@@ -120,7 +110,6 @@ h2  {
   text-align: center;
   margin: 3% 0 0 0;
 }
-
 input, button {
   font-size: 1.25vw;
   margin: 3.5% auto 0 auto;
@@ -132,7 +121,6 @@ input, button {
   border-width: 0.15vw;
   box-shadow: rgba(0, 0, 0, 0.19) 0px 0.625rem 1.25rem, rgba(0, 0, 0, 0.23) 0px 0.375rem 0.375rem;
 }
-
 button {
   position: relative;
   overflow: hidden;
@@ -144,7 +132,6 @@ button {
   padding: 1%;
   background-color: white;
 }
-
 ::placeholder {
   font-weight: 100;
   opacity: 0.5;
@@ -152,14 +139,11 @@ button {
 .welcome, .login-window {
   height: 100vh;
 }
-
 *  {
   scrollbar-width: thin;
   scrollbar-color: #d4d4d4 #f0f0f0; 
 }
-
 *::-webkit-scrollbar {
   display: none;
 }
-
 </style>

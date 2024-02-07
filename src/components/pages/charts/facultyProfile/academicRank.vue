@@ -27,7 +27,7 @@ export default {
         indexAxis: 'y',
         scales: {
           x: {
-            display: false, // Hide x-axis labels
+            display: false,
           }},
         plugins: {
           title: {
