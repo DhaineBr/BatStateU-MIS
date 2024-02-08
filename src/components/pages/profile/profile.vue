@@ -16,7 +16,6 @@ export default {
         };
         progressObjects.push(progressObject);
         }
-
         return  {
             progressObjects,
             selectedOption: '2023'

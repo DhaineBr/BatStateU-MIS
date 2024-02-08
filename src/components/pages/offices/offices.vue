@@ -24,7 +24,7 @@ export default {
             },
             {
                 acronymOne: 'OVP',
-                acronymTwo: 'DAE',
+                acronymTwo: 'DEA',
                 name:  'Office of the Vice President for Development and External Affairs'
             },
         ]
@@ -100,7 +100,6 @@ export default {
             'VIP Corals Office - Lobo',
             'VIP Corals Office - Nasugbu'
         ]
-        
         return  {
             offices,
             oupOffices,
@@ -112,7 +111,6 @@ export default {
     }
 }
 </script>
-
 <template>
     <div class="container">
         <div class="top">

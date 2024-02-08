@@ -2,6 +2,8 @@ import './assets/main.css'
 import { createApp } from 'vue'
 import App from './App.vue'
 import router from './router'
+import mdiVue from 'mdi-vue/v3'
+import * as mdijs from '@mdi/js'
 
 import 'vuetify/styles'
 import { createVuetify } from 'vuetify'
@@ -19,6 +21,7 @@ const vuetify = createVuetify({
   directives,
 })
 
+app.use(mdiVue, { icons: mdijs })
 app.use(vuetify)
 app.use(VCalendar)
 app.use(router)
