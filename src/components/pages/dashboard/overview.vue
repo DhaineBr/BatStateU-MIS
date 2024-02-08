@@ -151,7 +151,6 @@ export default {
             <DoughnutChartThree/>
           </div>
           <div class="figures">
-
           </div>
         </div>
       </div>
@@ -243,7 +242,7 @@ export default {
 }
 /* Global */
 * {
-  border: solid;
+  border: none;
   border-width: 0.01rem;
 }
 .header {

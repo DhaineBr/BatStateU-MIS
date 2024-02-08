@@ -55,7 +55,7 @@ const handleLogin = () => {
   background-color: #F5F5F5;
   outline: none;
   overflow-y: auto;
-  overflow-x: hidden;
+  overflow-x: none;
 }
 .login  {
   width: 100vw;
