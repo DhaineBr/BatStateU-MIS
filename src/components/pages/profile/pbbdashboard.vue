@@ -7,6 +7,24 @@ export default  {
         OverallPbbProgress,
         ProgressStatus
     },
+    data()  {
+        // dummy data
+        const higherEd = [
+            'Outcome Indicator 1: Percentage of first time licensure exam takers',
+            'Outcome Indicator 2: Percentage of graduates (2 years prior) that are employed',
+            'Outcome Indicator 3: Percentage of undergraduate students enrolled in CHED-identified  and RDC-identified priority programs',
+            'Outcome Indicator 4: Percentage of undergraduate programs with accreditation'
+        ]
+        const advancedEd = [
+            'Outcome Indicator 5: Percentage  of graduate school faculty engaged in research work',
+            'Outcome Indicator 1 (State University): Percentage  of graduate school faculty enrolled in research degree program',
+            'Outcome Indicator 2: Percentage  of graduate programs with accreditation'
+        ]
+        return  {
+            higherEd,
+            advancedEd
+        }
+    },
     methods: {
         goToProfile() {
         this.$router.push({ name: 'profile' });
@@ -59,6 +77,26 @@ export default  {
                     Deadline: July 10, 2023 (10d)
                 </div>
             </div>
+            <div class="status">
+                <div class="status-header">Higher Education</div>
+                <div v-for="(task, index) in higherEd" :key="index" class="list">
+                    <div class="list-item">
+                        <div class="status-box"></div>
+                        <div class="task">{{ task }}</div>
+                        <div class="learn-more"></div>
+                    </div>
+                </div>
+            </div>
+            <div class="status">
+                <div class="status-header">Advanced Education</div>
+                <div v-for="(task, index) in advancedEd" :key="index" class="list">
+                    <div class="list-item">
+                        <div class="status-box"></div>
+                        <div class="task">{{ task }}</div>
+                        <div class="learn-more"></div>
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
     <v-btn class="floating-button" stacked>
@@ -78,7 +116,7 @@ export default  {
     border-radius: 0 0 1rem 1rem;
     margin: 0 0 3vh 0;
     box-shadow: rgba(50, 50, 93, 0.25) 0px 0.375rem 0.75rem -0.125rem, 
-            rgba(0, 0, 0, 0.3) 0px 0.1875rem 0.4375rem -0.1875rem;
+    rgba(0, 0, 0, 0.3) 0px 0.1875rem 0.4375rem -0.1875rem;
 }
 .back   {
     font-size: 2.5vw;
@@ -154,19 +192,23 @@ export default  {
     width: 50%;
     text-align: right;
 }
-
+.checklist-header   {
+    padding: 0 0 0 2%;
+    font-size: 1.25vw;
+    font-weight: 600
+}
 /* Global */
 *   {
-    border: none;
+    border: solid;
     border-width: 0.01rem;
 }
-.top, .icon, .left-most, .middle, .right-most, .card, .value, .chart-one, .chart-two   {
+.top, .icon, .left-most, .middle, .right-most, .card, .value, .chart-one, .chart-two, .list   {
     justify-content: center;
     align-items: center;
     display: flex;
     flex-direction: column;
 }
-.summary    {
+.summary, .list    {
     width: 100%;
     justify-content: center;
     align-items: center;
@@ -221,6 +263,11 @@ export default  {
 .left, .right   {
     display: flex;
     flex-direction: column;
+}
+.status-header  {
+    padding: 0 0 0 2%;
+    font-size: 1.25vw;
+    font-weight: 600
 }
 /* Floating Button */
 .floating-button   {

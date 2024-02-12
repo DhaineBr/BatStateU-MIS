@@ -112,11 +112,11 @@
     align-items: center;
     justify-content: right;
     width: 85%;
-    height: 6vh;
+    height: 7.5vh;
     border: solid;
     background-color: white;
     color: black;
-    border-radius: 0.25rem;
+    border-radius: 0.5rem;
     border-width: 0.05rem;
     box-shadow: rgba(99, 99, 99, 0.2) 0 0.125rem 0.5rem 0rem;
     margin-right: 0

@@ -12,7 +12,7 @@ export default {
   data() {
     return  {
       chartData: {   
-        labels: ['Male', 'Female'],
+        labels: ['Internally Funded', 'Externally Funded'],
         datasets: [
           {
             backgroundColor: ['#EC061D', '#06ECC3'],

@@ -45,6 +45,7 @@ export default {
     'Blood Donation',
     'Food and Nutrition / Health and Sanitation / Material and Child Care'
   ]
+  const nationalities = ['Angolan','Libyan','Nigerian','Papua New Guinean','Somelian','Thai']
   // Dummy data for extension services
   const serviceObjects = [];
   for (let i = 0; i < 7; i++) {
@@ -76,7 +77,8 @@ export default {
     'Candidates'];
   return {
     serviceObjects,
-    status
+    status,
+    nationalities
   };
 },
 }
@@ -90,9 +92,7 @@ export default {
           <div class="left"><BarChartOne /></div>
           <div class="right"><BarChartTwo /></div>
         </div>
-        <div class="bottom">
-          <BarChartThree />
-        </div>
+        <div class="bottom"><BarChartThree /></div>
       </div>
 
       <div class="box-two">
@@ -103,7 +103,19 @@ export default {
         </div>
         <div class="bottom">
           <div class="left"><PieChartOne /></div>
-          <div class="right"></div>
+          <div class="right">
+            <div class="head" style="width: 100%">Foreign Students</div>
+            <div class="content">
+              <div class="fig-cont" style="width: 50%">
+                <div  v-for="(nationality, index ) in nationalities" :key="index" style="width: 100%;" class="figures">
+                  <div class="numbers" style="width: 20%; font-weight: 600;">{{ 12 }}</div>
+                  <div class="text">{{ nationality }}</div>
+                </div>
+              </div>
+              <div class="image"><img src="./../../../assets/student.svg" style="width:15vw"></div>
+            </div>
+            
+          </div>
         </div>
         <div class="bottom-most"><BarChartFour /></div>
       </div>
@@ -144,30 +156,6 @@ export default {
       <div class="box-four">
         <div class="header">Accreditation status of Academic Programs  </div>
         <div class="sub-one">
-          <div class="sub-two">
-            <div class="sub-three" v-for="(serviceObject, index ) in serviceObjects.slice(0, 2)" :key="index">
-              <div class="figure">{{ serviceObject.figure }}</div>
-              <div class="service">{{ status[index] }}</div>
-            </div>
-          </div>
-          <div class="sub-two">
-            <div class="sub-three" v-for="(serviceObject, index ) in serviceObjects.slice(2, 4)" :key="index">
-              <div class="figure">{{ serviceObject.figure }}</div>
-              <div class="service">{{ status[index] }}</div>
-            </div>
-          </div>
-          <div class="sub-two">
-            <div class="sub-three" v-for="(serviceObject, index ) in serviceObjects.slice(4, 6)" :key="index">
-              <div class="figure">{{ serviceObject.figure }}</div>
-              <div class="service">{{ status[index] }}</div>
-            </div>
-          </div>
-          <div class="sub-two">
-            <div class="sub-three" v-for="(serviceObject, index) in serviceObjects.slice(6, 8)" :key="index">
-              <div class="figure">{{ serviceObject.figure }}</div>
-              <div class="service">{{ status[index] }}</div>
-            </div>
-          </div>
         </div>
       </div>
       <div class="box-five">
@@ -282,7 +270,7 @@ export default {
 .box-one, .box-two, .box-three, .box-four, .box-five, .box-six  {
   padding-top: 5vh
 }
-.box-one, .box-two, .box-three, .box-four, .box-five, .box-six, .left, .right, .sub-two, .icon, .figure, .service, .six-sub {
+.box-one, .box-two, .box-three, .box-four, .box-five, .box-six, .left, .right, .sub-two, .icon, .figure, .service, .six-sub, .head, .right {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -296,21 +284,30 @@ export default {
   height: 65vh;
   width: 100%;
 }
-.top, .bottom, .bottom-most, .sub-one, .sub-three {
+.top, .bottom, .bottom-most, .sub-one, .sub-three, .content {
   display: flex;
   flex-direction: row;
   align-items: center;
   justify-content: center;
+}
+.figures  {
+  display: flex;
+  flex-direction: row;
+  align-items: start;
+  justify-content: flex-start;
 }
 .left,  .right {
   height: inherit;
   width: 40%;
   margin: auto;
 }
-.left {
+.left, .number {
   float: left;
 }
-.right  {
+.right, .text  {
   float: right;
+}
+.numbers, .text {
+  font-size: 1.25vw;
 }
 </style>
