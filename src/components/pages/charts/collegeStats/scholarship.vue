@@ -17,6 +17,7 @@ export default {
           {
             backgroundColor: ['#EC061D', '#06ECC3'],
             data: [350, 100],
+            borderWidth: 0
           }
         ]
       },

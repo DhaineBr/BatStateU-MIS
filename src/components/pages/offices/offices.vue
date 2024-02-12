@@ -122,7 +122,7 @@ export default {
                 <div class="search-container">
                     <div class="search">
                         <input type="text" placeholder="Search for an office">
-                        <div class="icon"></div>
+                        <div class="icon"><mdicon name="magnify" class="icon"/></div>
                     </div>
                 </div>
                 <div class="header" style="margin-top: 3%">
@@ -242,7 +242,8 @@ input[type='text']  {
 .icon   {
     height: inherit;
     width: 10%;
-    font-size: 2vw
+    font-size: 2vw;
+    text-align: right;
 }
 
 /* Main Nav */

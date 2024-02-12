@@ -27,16 +27,42 @@ export default {
   },
   data() {
 
+  var community = localStorage.getItem('./../../../assets/community.svg');
+  var sports = localStorage.getItem('./../../../assets/sports.svg');
+  var trees = localStorage.getItem('./../../../assets/trees.svg');
+  var gift = localStorage.getItem('./../../../assets/gift.svg');
+  var plant = localStorage.getItem('./../../../assets/plant.svg');
+  var blood = localStorage.getItem('./../../../assets/blood.svg');
+  var food = localStorage.getItem('./../../../assets/blood.svg');
+
+  const icons = [community, sports, trees, gift, plant, blood, food]
+  const services = [
+    'Fund Raising for Community Development',
+    'Youth sports development, environment camps',
+    'Clean and Green community / Coastal Cleanup',
+    'Gift Giving Activity',
+    'Tree planting',
+    'Blood Donation',
+    'Food and Nutrition / Health and Sanitation / Material and Child Care'
+  ]
   // Dummy data for extension services
   const serviceObjects = [];
   for (let i = 0; i < 7; i++) {
     const serviceObject = {
-      icon:`icon${i + 1}`,
+      icon: icons[i],
       figure: (Math.floor(Math.random() * 10) + 20),
-      serviceName: `service${i + 1}`,
+      serviceName: services[i],
     };
     serviceObjects.push(serviceObject);
   }
+
+  // Display the service icons
+  serviceObjects.forEach(service => {
+    const imgElement = document.createElement('img');
+    imgElement.src = service.icon; // Assign the icon URL to the src attribute
+    imgElement.alt = service.serviceName;
+    document.body.appendChild(imgElement); // Append each icon to the document body or any desired container
+  });
 
   // Dummy data for accreditation status
   const status = [
@@ -155,7 +181,7 @@ export default {
         </div>
       </div>
       <div class="box-six">
-        <div class="header">Financial Status </div>
+        <div class="header">Financial Status</div>
         <div class="six-sub">
           <BarChartFive/>
         </div>
@@ -240,6 +266,7 @@ export default {
   height: 87.5vh;
   width: 100vw;
 }
+
 /* Global */
 * {
   border: none;
@@ -255,7 +282,7 @@ export default {
 .box-one, .box-two, .box-three, .box-four, .box-five, .box-six  {
   padding-top: 5vh
 }
-.box-one,  .box-two, .box-three, .box-four, .box-five, .box-six, .left, .right, .sub-two, .icon, .figure, .service {
+.box-one, .box-two, .box-three, .box-four, .box-five, .box-six, .left, .right, .sub-two, .icon, .figure, .service, .six-sub {
   display: flex;
   flex-direction: column;
   align-items: center;

@@ -5,6 +5,7 @@
     
     <nav>
         <RouterLink to="/landing/mainmenu" class="main">
+            <mdicon name="menu" class="icon"/>
             <div class="img-container"><img src="https://dione.batstate-u.edu.ph/student/batsu_icon.png"></div>
             <div class="text">University MIS</div>
         </RouterLink>

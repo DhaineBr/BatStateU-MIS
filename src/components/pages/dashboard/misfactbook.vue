@@ -68,7 +68,8 @@ export default {
   display: flex;
   align-items: center;
   justify-content: center;
-  cursor: pointer
+  cursor: pointer;
+  float: left
 }
 .backdrop {
   position: relative; 

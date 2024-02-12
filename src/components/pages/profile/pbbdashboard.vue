@@ -1,6 +1,12 @@
 <script>
-import { PrimeIcons } from 'primevue/api';
+import OverallPbbProgress from '@/components/pages/charts/pbbDashboard/overallPbbStatus.vue'
+import ProgressStatus from '@/components/pages/charts/pbbDashboard/progressStatus.vue'
+
 export default  {
+    components: {
+        OverallPbbProgress,
+        ProgressStatus
+    },
     methods: {
         goToProfile() {
         this.$router.push({ name: 'profile' });
@@ -9,8 +15,9 @@ export default  {
 }
 </script>
 <template>
+    
     <div class="top">
-        <div class="head">
+        <div class="head" style="width: 100%;">
             <button class="back" @click="goToProfile"><mdicon name="chevron-left" class="icon"/></button>
         </div>
         <div class="summary">
@@ -23,41 +30,55 @@ export default  {
                 
             </div>
             <div class="right-most">
-                <div class="backdrop"><div class="ranking-card"></div></div>
-                <div class="backdrop"><div class="eligibility-card"></div></div>
+                <div class="backdrop"><div class="card">Current Office Ranking</div><div class="value" style="color:black; width: 27.25%">1st</div></div>
+                <div class="backdrop"><div class="card">PBB Eligibility</div><div class="value" style="color: #159300; width: 51%">Eligible</div></div>
             </div>
         </div>
     </div>
     <div class="left">
-        <div class="header">
+        <div class="header" style="border: solid; border-width: 0 0.25rem 0 0;">
             Progress
+        </div>
+        <div class="chart-one">
+            <OverallPbbProgress/>
+        </div>
+        <div class="chart-two">
+            <ProgressStatus/>
         </div>
     </div>
     <div class="right">
-        <div class="header">
+        <div class="header" style="border: solid; border-width: 0 0 0 0.25rem;">
             Tasks
         </div>
+        <div class="content">
+            <div class="head" style="height: 7vh">
+                <div class="subhead" style="height: 7vh;">
+                    Performance Results 
+                </div>
+                <div class="deadline">
+                    Deadline: July 10, 2023 (10d)
+                </div>
+            </div>
+        </div>
     </div>
+    <v-btn class="floating-button" stacked>
+        <span style="font-size:1.25vw">
+        <mdicon name="message-text-outline" class="icon"/>
+        PBB
+        </span>
+    </v-btn>
 </template>
 
 <style scoped>
-
 /* Top of the screen */
 .top    {
-    width: 100vw;
+    width: 100%;
     height: 35vh;
+    background-color: white;
     border-radius: 0 0 1rem 1rem;
     margin: 0 0 3vh 0;
     box-shadow: rgba(50, 50, 93, 0.25) 0px 0.375rem 0.75rem -0.125rem, 
             rgba(0, 0, 0, 0.3) 0px 0.1875rem 0.4375rem -0.1875rem;
-}
-.head   {
-    height: 10vh;
-    display: flex;
-    justify-content: flex-start; 
-    align-items: center;
-    width: 100%;
-    padding: 0 0 0 1%
 }
 .back   {
     font-size: 2.5vw;
@@ -66,7 +87,7 @@ export default  {
     border-radius: 0.35rem;
 }
 .summary    {
-    height: 25vh;
+    height: 35vh;
 }
 .left-most  {
     width: 40%;
@@ -74,27 +95,72 @@ export default  {
 .middle, .right-most {
     width: 30%
 }
+.backdrop {
+    background-color: white;
+    height: 6vh;
+    width: 16.5vw;
+    margin: 2.5% 0;
+    border-radius: 0.4rem;
+    box-shadow: rgba(0, 0, 0, 0.15) 0.25rem 0.25rem 0.2rem;
+    text-align: right;
+    font-size: 1vw;
+}
+.card   {
+    bottom: 0;
+    height: inherit;
+    background-color: #D00412;
+    color: white;
+    font-size: 1vw;
+    border-radius: 0.4rem;
+    padding: 0 5%;
+    float: left;
+}
+.value  {
+    height: inherit;    
+    float: right;
+}
 
 /* Bottom Left side */
 .left   {
     float: left;
-    height: 65vh;
+    height: 120vh;
     width: 27.5%;
+}
+.chart-one {
+    height: 30vh;
+}
+.chart-two  {
+    height: 45vh
 }
 
 /* Bottom right side */
 .right  {
     float: right;
-    height: 65vh;
+    height: 120vh;
     width: 72.5%;
+}
+.content    {
+    height: 100vh;
+    width: 95%;
+    margin: 5vh 0 0 4%
+}
+.subhead    {
+    text-align: left;
+    color: white;
+    width: 50%;
+    background-image: linear-gradient(to right, #D00412 , #F5F5F5);
+}
+.deadline   {
+    width: 50%;
+    text-align: right;
 }
 
 /* Global */
 *   {
-    border: solid;
+    border: none;
     border-width: 0.01rem;
 }
-.top, .icon, .left-most, .middle, .right-most   {
+.top, .icon, .left-most, .middle, .right-most, .card, .value, .chart-one, .chart-two   {
     justify-content: center;
     align-items: center;
     display: flex;
@@ -129,7 +195,6 @@ export default  {
 .subtitle, .quarter {
     color: #000000;
     font-size: 1.25vw;
-
 }
 .header    {
     background-color: #D00412;
@@ -138,8 +203,32 @@ export default  {
     font-size: 1.5vw;
     line-height: 2.25;
 }
+.head, .subhead   {
+    height: 10vh;
+    display: flex;
+    justify-content: flex-start; 
+    align-items: center;
+    padding: 0 0 0 1%
+}
+.subhead, .deadline {
+    font-size: 1.25vw;
+    height: 6.5vh;
+}
+
+.chart-one, .chart-two  {
+    margin: 5vh 0 0 0 
+}
 .left, .right   {
     display: flex;
     flex-direction: column;
+}
+/* Floating Button */
+.floating-button   {
+    background-color: #94080D;
+    color: white;
+    border-radius: 4rem;
+    position: fixed;
+    bottom: 2vh; 
+    right: 2vw; 
 }
 </style>

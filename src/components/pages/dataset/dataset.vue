@@ -26,7 +26,7 @@
         <div class="top-nav">
             <div class="search-container">
                 <input type="text" placeholder="Search for an office">
-                <div class="icon"></div>
+                <div class="icon"><mdicon name="magnify" class="icon"/></div>
             </div>
         </div>
         <div class="bottom">

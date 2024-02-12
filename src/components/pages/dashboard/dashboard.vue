@@ -20,7 +20,7 @@
                     <RouterLink to="/landing/dashboard/the" class="nav-button">THE</RouterLink>
                     <RouterLink to="/landing/dashboard/scopus" class="nav-button">Scopus</RouterLink>
                     <RouterLink to="/landing/dashboard/altmetric" class="nav-button">Altmetric</RouterLink>
-                    <RouterLink to="/landing/dashboard/misfactbook" class="nav-button">...</RouterLink>
+                    <RouterLink to="/landing/dashboard/misfactbook" class="nav-button"><mdicon name="dots-horizontal" class="icon"/></RouterLink>
                 </nav>
             </div>
         </div>
@@ -78,18 +78,17 @@ nav {
     width: 90%;
     margin-top: 22.5%;
 }
-.nav-button {
+.nav-button, .icon {
     color: #94080D;
     font-size: 1vw;
     margin: 0 1%;
     background-color: transparent;
     padding: 1% 1.5%;
 }
-.nav-button:active, .nav-button:focus {
+.nav-button:active, .nav-button:focus, .icon:active, .icon:focus {
     background-color: #94080D;
     color: white;
 }
-
 
 /* Global */
 *   {
