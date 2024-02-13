@@ -8,6 +8,7 @@ export default  {
         ProgressStatus
     },
     data()  {
+        const learnMoreTooltip = "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut ut sollicitudin orci, quis accumsan eros. Maecenas ultrices elit ac mollis porttitor. Duis tempor venenatis"
         // dummy data
         const higherEd = [
             'Outcome Indicator 1: Percentage of first time licensure exam takers',
@@ -22,7 +23,8 @@ export default  {
         ]
         return  {
             higherEd,
-            advancedEd
+            advancedEd,
+            learnMoreTooltip
         }
     },
     methods: {
@@ -79,21 +81,29 @@ export default  {
             </div>
             <div class="status">
                 <div class="status-header">Higher Education</div>
-                <div v-for="(task, index) in higherEd" :key="index" class="list">
-                    <div class="list-item">
-                        <div class="status-box"></div>
+                <div v-for="(task, index) in higherEd" :key="index" class="list" style="height: 7.5vh;">
+                    <div class="list-item" style="height: 5vh; text-align: left; width: 100%">
+                        <div class="status-box-false" style="margin: 0 1%"></div>
                         <div class="task">{{ task }}</div>
-                        <div class="learn-more"></div>
+                        <div class="learn-more" style="margin: 0 1.5%">
+                            <img src="./../../../assets/learn_more.svg" style="width: 1.5vw; opacity: 0.5">
+                            <v-tooltip :text="learnMoreTooltip" activator="parent" location="start" class="tooltip">
+                            </v-tooltip>
+                        </div>
                     </div>
                 </div>
             </div>
             <div class="status">
                 <div class="status-header">Advanced Education</div>
-                <div v-for="(task, index) in advancedEd" :key="index" class="list">
-                    <div class="list-item">
-                        <div class="status-box"></div>
+                <div v-for="(task, index) in advancedEd" :key="index" class="list" style="height: 7.5vh;">
+                    <div class="list-item" style="height: 5vh; text-align: left; width: 100%">
+                        <div class="status-box-false" style="margin: 0 1%"></div>
                         <div class="task">{{ task }}</div>
-                        <div class="learn-more"></div>
+                        <div class="learn-more" style="margin: 0 1.5%">
+                            <img src="./../../../assets/learn_more.svg" style="width: 1.5vw; opacity: 0.5">
+                            <v-tooltip :text="learnMoreTooltip" activator="parent" location="top" class="tooltip">
+                            </v-tooltip>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -192,23 +202,25 @@ export default  {
     width: 50%;
     text-align: right;
 }
-.checklist-header   {
-    padding: 0 0 0 2%;
-    font-size: 1.25vw;
-    font-weight: 600
+.list       {
+    display: flex;
+    flex-direction: row;
+    align-items:start;
+    justify-content:left;
+    text-align: left;
 }
 /* Global */
 *   {
-    border: solid;
+    border: none;
     border-width: 0.01rem;
 }
-.top, .icon, .left-most, .middle, .right-most, .card, .value, .chart-one, .chart-two, .list   {
+.top, .icon, .left-most, .middle, .right-most, .card, .value, .chart-one, .chart-two, .list, img   {
     justify-content: center;
     align-items: center;
     display: flex;
     flex-direction: column;
 }
-.summary, .list    {
+.summary  {
     width: 100%;
     justify-content: center;
     align-items: center;
@@ -245,7 +257,7 @@ export default  {
     font-size: 1.5vw;
     line-height: 2.25;
 }
-.head, .subhead   {
+.head, .subhead, .list-item  {
     height: 10vh;
     display: flex;
     justify-content: flex-start; 
@@ -265,9 +277,22 @@ export default  {
     flex-direction: column;
 }
 .status-header  {
-    padding: 0 0 0 2%;
+    padding: 2% 0 1% 2%;
     font-size: 1.25vw;
     font-weight: 600
+}
+.status-box-false {
+    height: 3.5vh;
+    width: 1.6vw;
+    background-color: white;
+    border-radius: 0.15rem;
+    box-shadow: rgba(99, 99, 99, 0.2) 0rem 0.125rem 0.5rem 0rem;
+    border: solid;
+    border-width: 0.1rem;
+}
+.tooltip    {
+    width: 85%;
+    font-size: 0.5vw;
 }
 /* Floating Button */
 .floating-button   {
