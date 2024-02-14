@@ -9,7 +9,7 @@ import 'vuetify/styles'
 import { createVuetify } from 'vuetify'
 import * as components from 'vuetify/components'
 import * as directives from 'vuetify/directives'
-
+import * as ConfirmDialog from 'vuejs-confirm-dialog';
 import VCalendar from 'v-calendar';
 import 'v-calendar/style.css';
 
@@ -21,6 +21,7 @@ const vuetify = createVuetify({
   directives,
 })
 
+app.use(ConfirmDialog)
 app.use(mdiVue, { icons: mdijs })
 app.use(vuetify)
 app.use(VCalendar)

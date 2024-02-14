@@ -1,11 +1,13 @@
 <script>
 import OverallPbbProgress from '@/components/pages/charts/pbbDashboard/overallPbbStatus.vue'
 import ProgressStatus from '@/components/pages/charts/pbbDashboard/progressStatus.vue'
+import chatPopUp from '@/components/pages/charts/pbbDashboard/chatPopUp.vue'
 
 export default  {
     components: {
         OverallPbbProgress,
-        ProgressStatus
+        ProgressStatus,
+        chatPopUp
     },
     data()  {
         const learnMoreTooltip = "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut ut sollicitudin orci, quis accumsan eros. Maecenas ultrices elit ac mollis porttitor. Duis tempor venenatis"
@@ -30,7 +32,11 @@ export default  {
     methods: {
         goToProfile() {
         this.$router.push({ name: 'profile' });
+        },
+        openModal() {
+        this.$refs.modal.openModal();
         }
+        
     }
 }
 </script>
@@ -109,12 +115,17 @@ export default  {
             </div>
         </div>
     </div>
-    <v-btn class="floating-button" stacked>
+    <v-btn class="floating-button" stacked @click="openModal">
         <span style="font-size:1.25vw">
         <mdicon name="message-text-outline" class="icon"/>
         PBB
         </span>
     </v-btn>
+    <Modal>
+      <!-- Content for the modal goes here -->
+      <h2>Modal Content</h2>
+      <p>This is a popup modal!</p>
+    </Modal>
 </template>
 
 <style scoped>
