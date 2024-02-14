@@ -1,18 +1,16 @@
 <script>
+import { ref } from 'vue'
+
 export default {
     data()  {
         function generateRandomDate(startDate, endDate) {
-        // Convert dates to timestamps
         const startTimestamp = startDate.getTime();
         const endTimestamp = endDate.getTime();
-        // Generate a random timestamp within the range
         const randomTimestamp = startTimestamp + Math.random() * (endTimestamp - startTimestamp);
-        // Convert timestamp back to a Date object
         const randomDate = new Date(randomTimestamp);
 
         return randomDate;
         }
-
 
         // filters
         const years = ['2020-2021', '2021-2022', '2022-2023', '2023-2024']
@@ -32,12 +30,14 @@ export default {
             }
             tableData.push(tableRow)
         }
+        const filters = ref([])
 
         return  {
             years,
             offices,
             fileTypes,
-            tableData
+            tableData,
+            filters
         }
     },
     methods: {
@@ -58,7 +58,7 @@ export default {
             <div class="search-container">
                 <div class="search">
                     <div class="icon"><mdicon name="magnify"/></div>
-                    <input type="text" placeholder="Search for files">
+                    <input type="text" placeholder="Search for files" v-model="searchQuery">
                 </div>
             </div>
         </div>
@@ -98,11 +98,11 @@ export default {
                     </thead>
                     <tbody>
                         <tr v-for="(data, index) in tableData" :key="index">
-                            <td>{{ data.name }}</td>
-                            <td>{{ data.datePublished }}</td>
-                            <td>{{ data.fileType }}</td>
-                            <td><button><mdicon name="dots-horizontal"/></button></td>
-                        </tr>
+                            <td class="text-center">{{ data.name }}</td>
+                            <td class="text-center">{{ getNumericFormat(data.datePublished) }}</td>
+                            <td class="text-center">{{ data.fileType }}</td>
+                            <td class="text-center"><button><mdicon name="dots-horizontal"/></button></td>
+                        </tr>                               
                     </tbody>
                 </v-data-table>
             </div>

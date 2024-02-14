@@ -1,6 +1,29 @@
 <script>
+export default {
+    data()  {
+        const links = [
+            'KSIT Park Development Office',
+            'Action Center',
+            'Office of the Secretary',
+            'Presidential Project Management Office',
+            'Office of Culture and Arts ',
+            'Office of Sports',
+            'Testing and Admission Office',
+            'Office of Sports',
+            'Office of Curriculum and Instructions',
+            'Center for Transformative Learning',
+            'Office of Quality Assurance Management ',
+            'Center for Innovation in Engineering Education',
+            'Legal Affairs Office',
+            'Office of the Board of Regents',
+            'Scholarship Office'
+        ]
+        return  {
+            links
+        }
+    }
+}
 </script>
-
 <template>
     <div class="left">
         <div class="top">
@@ -31,7 +54,13 @@
         </div>
         <div class="bottom">
             <div class="link-container">
-                <div class="link"></div>
+                <nav>
+                    <RouterLink v-for="(link, index) in links" :key="index" 
+                    :to="`/landing/dataset/${link.toLowerCase().replace(/\s+/g, '-')}`" class="link">
+                        {{link}}
+                        <mdicon name="greater-than" class="icon"/>
+                    </RouterLink>                                              
+                </nav>
             </div>
         </div>
     </div>
@@ -60,7 +89,7 @@
 }
 .box    {
     width: 85%;
-    height: 65vh;
+    height: 90vh;
     background-color: #EEEEEE;
     border: solid;
     border-radius: 1rem;
@@ -69,7 +98,7 @@
 }
 .header {
     height: 10vh;
-    width: 90%;
+    width: 85%;
     font-size: 1.75vw;
     display: flex;
     text-align: left;
@@ -79,8 +108,8 @@
     font-weight: 500;
 }
 .text   {
-    height: 55vh;
-    width: 90%;
+    height: 72.5vh;
+    width: 80%;
     font-size: 1vw;
     font-weight: 600;
     line-height: 1.25;
@@ -91,25 +120,14 @@
     float: right;
     width: 52.5%;
     height: 90vh;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
 }
 .top-nav {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    height: 20vh;
+    height: 37.5vh;
     width: 80%;
     align-self: flex-end;
 }
 .search-container   {
-    display: flex;
-    flex-direction: row;
     text-align: right;
-    align-items: center;
     justify-content: right;
     width: 85%;
     height: 7.5vh;
@@ -131,8 +149,8 @@ input[type='text']  {
 .icon   {
     width: 10%;
     height: 4vh;
-    color: black;
-    background-color: white;
+    background-color: transparent;
+    margin: 0 0 0 auto;
 }
 .link-container {
     width: 87.5%;
@@ -145,15 +163,22 @@ input[type='text']  {
     border-radius: 0.5rem;
     border-width: 0.05rem;
     color: #D00412;
+    font-size: 1vw;
+    padding: 0 0 0 4%;
+    cursor: pointer;
+    transition: all 0.5s ease;
+}
+.link:hover {
+    background-color: #D00412;
+    color: white;
 }
 
 /* Global */
 *   {
-    border: hidden;
     background-color: #F5F5F5;
     outline: none;
 }
-.top, .bottom, .icon, .box    {
+.top, .bottom, .icon, .box, .right, .top-nav    {
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -163,11 +188,16 @@ input[type='text']  {
     background-color: transparent;
 }
 .bottom {
-    height: 70vh;
+    height: 100vh;
     color: black;
     width: 100%;
 }
 ::placeholder   {
     opacity: 0.5;
+}
+.search-container, .link   {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
 }
 </style>

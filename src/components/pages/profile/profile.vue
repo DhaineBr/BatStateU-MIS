@@ -8,17 +8,45 @@ export default {
         PbbGrading,
     },
     data()  { 
+        // progress bar dummy data
         const progressObjects = [];
         for (let i = 0; i < 4; i++) {
-        const progressObject = {
-            label:`Q${i + 1}`,
-            value: 90 + i,
-        };
-        progressObjects.push(progressObject);
+            const progressObject = {
+                label:`Q${i + 1}`,
+                value: 90 + i,
+            };
+            progressObjects.push(progressObject);
+        }
+
+        // activities dummy data
+        const acronym = [
+            'PBB', 
+            'MIS'
+        ]
+        const name = [
+            'Submission of PBB Documents',
+            'Submission for the office data',
+            'Submission of OPCR: Third Quarter'
+        ]
+        const due = [
+            'July 21, 2023',
+            'July 28, 2023',
+        ]
+        const activities = [];
+        for (let i = 0; i < 4; i++) {
+            const activity = {
+               icon: acronym[i % acronym.length],
+               name: name[i % name.length],
+               due: due[i % due.length]
+
+            };
+            activities.push(activity);
         }
         return  {
             progressObjects,
-            selectedOption: '2023'
+            selectedOption: '2023',
+            selectedDate: new Date(),
+            activities
         }
     },
     methods: {
@@ -62,6 +90,9 @@ export default {
                             <option value="2021">2021</option>
                             <option value="2022">2022</option>
                             <option value="2023">2023</option>
+                            <option value="2024">2024</option>
+                            <option value="2025">2025</option>
+                            <option value="2026">2026</option>
                             </select>
                         </div>
                         <div class="cont" v-for="(progressObject, index ) in progressObjects" :key="index">
@@ -82,11 +113,22 @@ export default {
         </div>
     </div>
     <div class="right">
-        <div class="calendar">
-            <VCalendar transparent borderless/>
+        <div class="calendar-container">
+            <v-date-picker 
+                v-model="selectedDate" 
+                :landscape="true" 
+                :reactive="true">
+            </v-date-picker>
         </div>
         <div class="activities">
             <div class="title">Activities</div>
+            <div v-for="(activity, index) in activities" :key="index" class="task-box">
+                <div class="icon">{{ activity.icon }}</div>
+                <div class="task-detail">
+                    <div class="task-name">{{ activity.name }}</div>
+                    <div class="task-due">{{ activity.due }}</div>
+                </div>
+            </div>
         </div>
     </div>
 </template>
@@ -110,11 +152,9 @@ export default {
     height: 15vh;
     padding: 0 0 0 2.5%;
 }
-.card-container, .content, .progress-bar, .value {
+.card-container {
     display: flex;
     flex-direction: row;
-    align-items: center;
-    justify-content: center;
 }
 .card   {
     border-radius: 0.5rem;
@@ -130,7 +170,7 @@ export default {
     font-size: 2.25vw;
     font-weight: 700;
     color: #94080D;
-    background-color: #FFFFFF;
+    background-color: transparent;
 }
 .text   {
     float: right;
@@ -148,6 +188,7 @@ export default {
     height: 75vh;
 }
 .title  {
+    padding: 0 0 1vh 0;
     font-weight: 900;
     color: #94080D;
     font-size: 1vw;
@@ -226,35 +267,69 @@ select  {
     height: 115vh;
     float: right;
 }
-.calendar   {
-    height: 55vh;
+.calendar-container   {
+    height: 50vh;
 }
 .activities {
     height: 65vh;
     padding: 2.5% 0 0 2.5%;
 }
-.calendar, .activities  {
+.calendar-container, .activities  {
     box-shadow: rgba(0, 0, 0, 0.16) 0rem 0.0625rem 0.25rem;
 }
-
+.task-box   {
+    margin: 2vh 0
+}
+.icon   {
+    width: 15%;
+    border-radius: 5rem;
+    background-color: #94080D;
+    color: white;
+}
+.task-detail    {
+    width: 85%;
+}
+.task-name  {
+    height: 5vh;
+}
+.task-due  {
+    height: 3vh;
+    font-size: 0.75vw;
+    font-weight: lighter;
+}
 /* Global */
 *   {
-    border: none;
     outline: none;
     border-width: 0.01rem;
 }
-.perf-stats {
+.perf-stats, .task-detail, .icon {
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
 }
 .card, .chart-container {
-    display: flex;
     text-align: center;
+}
+.content, .progress-bar, .value, .calendar-container, .task-box, .card, .chart-container {
+    display: flex;
+    flex-direction: row;
     align-items: center;
     justify-content: center;
-    flex-direction: row;
 }
-
+.icon, .task-name   {
+    font-size: 1vw;
+    font-weight: bold;
+}
+.task-box, .icon, .task-detail  {
+    height: 8vh;
+}
+.task-name, .task-due   {
+    width: 100%;
+    padding: 0 0 0 5%;
+    text-align: left;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
 </style>
