@@ -21,7 +21,11 @@ import databaseVue from '@/components/pages/dataset/database.vue';
 import officesVue from '@/components/pages/offices/offices.vue';
 import kistParkvue from '@/components/pages/offices/kistPark.vue';
 
-import pbbVue from '@/components/pages/pbb.vue';
+import pbb from '@/components/pages/pbb/pbb.vue';
+import statusDashboardVue from '@/components/pages/pbb/statusDashboard.vue';
+import submissionsVue from '@/components/pages/pbb/submissions.vue';
+import adminVue from '@/components/pages/pbb/admin.vue';
+
 import AppVue from '@/App.vue';
 
 const router = createRouter({
@@ -108,7 +112,24 @@ const router = createRouter({
             {
               path: '/landing/pbb',
               name: 'pbb',
-              component: pbbVue
+              component: pbb,
+              children: [
+                {
+                  path: 'landing/pbb/status-dashboard',
+                  name: 'status-dashboard',
+                  component: statusDashboardVue
+                },
+                {
+                  path: 'landing/pbb/submissions',
+                  name: 'submissions',
+                  component: submissionsVue
+                },
+                {
+                  path: 'landing/pbb/admin',
+                  name: 'admin',
+                  component: adminVue
+                },
+              ]
             },
             {
               path: '/landing/offices',

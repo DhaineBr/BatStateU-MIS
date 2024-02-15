@@ -55,7 +55,4 @@ export default {
     color: #808080;
     margin: 5vh 0 0 0
 }
-#DoughnutChartKist  {
-  
-}
 </style>

@@ -22,7 +22,6 @@
     </div>
 </template>
 <style scoped>
-
 *   {
     border: hidden;
     outline: none;

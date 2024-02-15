@@ -208,7 +208,6 @@ input[type="checkbox"]   {
 }
 thead   {
     background-color: #D9D9D9;
-    position: sticky;
     border-radius: 0.75rem 0.75rem 0 0;
     width: 100%;
 }

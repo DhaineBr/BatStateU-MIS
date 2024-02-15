@@ -59,7 +59,13 @@ export default {
             </div>
         </div>
         <div class="bottom">
-
+            <v-data-table class="table">
+                <thead>
+                    <tr>
+                        <th>Data Included</th>
+                    </tr>
+                </thead>
+            </v-data-table>
         </div>
     </div>
 </template>
@@ -150,10 +156,23 @@ export default {
     height: 100vh;
     width: 100%;
 }
+.table  {
+    margin: 10vh 0 0 7.5vh;
+    width: 87.5%;
+    height: 100%;
+    font-size: 1vw;
+    border: solid;
+    border-width: 0.05rem;
+    border-color: black;
+}
+thead   {
+    background-color: #94080D;
+    color: white;
+}
 
 /* Global */
 *   {
-    border-width: 0.01rem;
+    outline: none;
 }
 .left, .right   {
     height: inherit;
@@ -161,7 +180,7 @@ export default {
 .top, .area-chart, .cards    {
     height: 60vh;
 }
-.left, .title, .officer, .link, .container, .button-cont, .back, .label, .value, .cards  {
+.left, .title, .officer, .link, .container, .button-cont, .back, .label, .value, .cards, .bottom  {
     display: flex;
     flex-direction: column;
 }

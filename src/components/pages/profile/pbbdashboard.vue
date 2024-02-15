@@ -121,11 +121,6 @@ export default  {
         PBB
         </span>
     </v-btn>
-    <Modal>
-      <!-- Content for the modal goes here -->
-      <h2>Modal Content</h2>
-      <p>This is a popup modal!</p>
-    </Modal>
 </template>
 
 <style scoped>
