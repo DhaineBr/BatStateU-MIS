@@ -148,7 +148,7 @@ export default {
             </div>
             <nav class="card-container" style="height: 40vh; width: 100%">
                 <RouterLink  v-for="(oupOffice, index) in oupOffices" :key="index" 
-                :to="`/landing/offices/oup/${oupOffice.trim().toLowerCase().replace(/\s+/g, '-')}`" class="card">
+                :to="`/landing/${oupOffice.trim().toLowerCase().replace(/\s+/g, '-')}`" class="card">
                     {{ oupOffice }}
                 </RouterLink>
             </nav>

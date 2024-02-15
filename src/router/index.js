@@ -19,6 +19,8 @@ import datasetVue from '@/components/pages/dataset/dataset.vue';
 import databaseVue from '@/components/pages/dataset/database.vue';
 
 import officesVue from '@/components/pages/offices/offices.vue';
+import kistParkvue from '@/components/pages/offices/kistPark.vue';
+
 import pbbVue from '@/components/pages/pbb.vue';
 import AppVue from '@/App.vue';
 
@@ -111,13 +113,18 @@ const router = createRouter({
             {
               path: '/landing/offices',
               name: 'offices',
-              component:  officesVue
+              component:  officesVue,
+            },
+            {
+              path: '/landing/ksit-park-development-office',
+              name: 'ksitPark',
+              component: kistParkvue
             },
             {
               path: '/landing/mainmenu',
               name: 'mainmenu',
               component:  mainmenuVue
-            }
+            },
           ]
         },
       ],
