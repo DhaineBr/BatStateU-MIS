@@ -115,17 +115,17 @@ const router = createRouter({
               component: pbb,
               children: [
                 {
-                  path: 'landing/pbb/status-dashboard',
+                  path: '/landing/pbb/status-dashboard',
                   name: 'status-dashboard',
                   component: statusDashboardVue
                 },
                 {
-                  path: 'landing/pbb/submissions',
+                  path: '/landing/pbb/submissions',
                   name: 'submissions',
                   component: submissionsVue
                 },
                 {
-                  path: 'landing/pbb/admin',
+                  path: '/landing/pbb/admin',
                   name: 'admin',
                   component: adminVue
                 },

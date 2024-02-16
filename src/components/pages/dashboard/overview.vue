@@ -46,6 +46,7 @@ export default {
     'Food and Nutrition / Health and Sanitation / Material and Child Care'
   ]
   const nationalities = ['Angolan','Libyan','Nigerian','Papua New Guinean','Somelian','Thai']
+  
   // Dummy data for extension services
   const serviceObjects = [];
   for (let i = 0; i < 7; i++) {
@@ -60,9 +61,9 @@ export default {
   // Display the service icons
   serviceObjects.forEach(service => {
     const imgElement = document.createElement('img');
-    imgElement.src = service.icon; // Assign the icon URL to the src attribute
+    imgElement.src = service.icon; 
     imgElement.alt = service.serviceName;
-    document.body.appendChild(imgElement); // Append each icon to the document body or any desired container
+    document.body.appendChild(imgElement);
   });
 
   // Dummy data for accreditation status
@@ -75,15 +76,22 @@ export default {
     'Level I Accredited',
     'Qualified for Level III',
     'Candidates'];
+  const accreditationStatus = [];
+  for (let i = 0; i < 8; i++){
+    const accreditation = {
+      status: status[i],
+      figure: Math.round((Math.random() * 4) + 1)
+    }
+    accreditationStatus.push(accreditation)
+  }
   return {
     serviceObjects,
-    status,
+    accreditationStatus,
     nationalities
   };
 },
 }
 </script>
-
 <template>
     <div class="container">
       <div class="box-one">
@@ -94,7 +102,6 @@ export default {
         </div>
         <div class="bottom"><BarChartThree /></div>
       </div>
-
       <div class="box-two">
         <div class="header">College Statistics</div>
         <div class="top">
@@ -114,12 +121,10 @@ export default {
               </div>
               <div class="image"><img src="./../../../assets/student.svg" style="width:15vw"></div>
             </div>
-            
           </div>
         </div>
         <div class="bottom-most"><BarChartFour /></div>
       </div>
-
       <div class="box-three">
         <div class="header">Extension Services</div>
         <div class="sub-one">
@@ -155,7 +160,11 @@ export default {
       </div>
       <div class="box-four">
         <div class="header">Accreditation status of Academic Programs  </div>
-        <div class="sub-one">
+        <div class="cont">
+          <div v-for="(accreditation, index) in accreditationStatus" :key="index" class="stat-cont">
+            <div class="figure">{{ accreditation.figure }}</div>
+            <div style="text-align: center; height: 5vh" class="status">{{ accreditation.status }}</div>
+          </div>
         </div>
       </div>
       <div class="box-five">
@@ -175,14 +184,12 @@ export default {
         </div>
       </div>
     </div>
-
 </template>
-
 <style scoped>
 .container  {
   display: flex;
   flex-direction: column;
-  height: 570vh;
+  height: 575vh;
   width: 100%;
   padding-top: 10vh;
 }
@@ -198,7 +205,7 @@ export default {
   height: 57.5vh;
 }
 .box-four {
-  height: 57.5vh
+  height: 62.5vh
 }
 .box-five {
   height: 80vh
@@ -210,7 +217,22 @@ export default {
 /* Box three sub boxes */
 .sub-one  {
   height: 45vh;
-  width: 100vw
+  width: 100vw;
+}
+.cont {
+  height: 45vh;
+  display: flex;
+  flex-flow: row wrap;
+  width: 50%;
+  justify-content: center;
+  align-items: center;
+}
+.stat-cont  {
+  display: flex; 
+  flex-direction: column;
+  width: 15%;
+  height: 15vh;
+  margin: 5% 5% 0 5%
 }
 .sub-two{
   width: 20%;
@@ -257,8 +279,7 @@ export default {
 
 /* Global */
 * {
-  border: none;
-  border-width: 0.01rem;
+  outline: none;
 }
 .header {
   width: 90%;
@@ -270,7 +291,7 @@ export default {
 .box-one, .box-two, .box-three, .box-four, .box-five, .box-six  {
   padding-top: 5vh
 }
-.box-one, .box-two, .box-three, .box-four, .box-five, .box-six, .left, .right, .sub-two, .icon, .figure, .service, .six-sub, .head, .right {
+.box-one, .box-two, .box-three, .box-four, .box-five, .box-six, .left, .right, .sub-two, .icon, .figure, .service, .six-sub, .head, .right, .stat-cont {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -307,7 +328,7 @@ export default {
 .right, .text  {
   float: right;
 }
-.numbers, .text {
+.numbers, .text, .status {
   font-size: 1.25vw;
 }
 </style>

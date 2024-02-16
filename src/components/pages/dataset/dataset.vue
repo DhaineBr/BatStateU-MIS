@@ -58,7 +58,7 @@ export default {
                     <RouterLink v-for="(link, index) in links" :key="index" 
                     :to="`/landing/dataset/${link.toLowerCase().replace(/\s+/g, '-')}`" class="link">
                         {{link}}
-                        <mdicon name="greater-than" class="icon"/>
+                        <mdicon name="chevron-right" class="icon"/>
                     </RouterLink>                                              
                 </nav>
             </div>

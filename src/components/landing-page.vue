@@ -1,8 +1,6 @@
 <script></script>
 <template>
     <div class="container">
-
-    
     <nav>
         <RouterLink to="/landing/mainmenu" class="main">
             <mdicon name="menu" class="icon"/>

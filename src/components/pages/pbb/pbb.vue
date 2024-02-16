@@ -1,7 +1,5 @@
 <script>
-export default {
-    
-}
+
 </script>
 <template>
     <div class="container">
@@ -12,11 +10,11 @@ export default {
                 <div class="quarter">Current Quarter: Q3</div>
             </div>
             <div class="navigation-container">
-                    <nav>
-                        <RouterLink to="/landing/pbb/status-dashboard" class="nav-button">Status Dashboard</RouterLink>
-                        <RouterLink to="/landing/pbb/submissions" class="nav-button">Submissions</RouterLink>
-                        <RouterLink to="/landing/pbb/admin" class="nav-button">Admin</RouterLink>
-                    </nav>
+                <nav>
+                    <RouterLink to="/landing/pbb/status-dashboard" class="nav-button">Status Dashboard</RouterLink>
+                    <RouterLink to="/landing/pbb/submissions" class="nav-button">Submissions</RouterLink>
+                    <RouterLink to="/landing/pbb/admin" class="nav-button">Admin</RouterLink>
+                </nav>
             </div>
         </div>
         <div class="content">
@@ -70,12 +68,10 @@ nav    {
 
 /* Global */
 *   {
-    /* border: solid;
-    border-width: 0.05rem; */
     outline: none;
 }
 .container{
-    height: 120vh;
+    height: 130vh;
 }
 .title-box, .navigation-container   {
     height: inherit;
@@ -89,7 +85,7 @@ nav    {
     width: 100%;
     padding: 0 0 0 5vh;
 }
-nav, .nav-button   {
+nav, .nav-button, .content   {
     display: flex;
     flex-direction: row;
     align-items: center;

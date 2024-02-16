@@ -277,8 +277,6 @@ input[type='text']  {
 /* Global */
 *   {
     outline: none;
-    border: hidden;
-    border-width: 0.01rem;
 }
 .container  {
     height: 500vh
