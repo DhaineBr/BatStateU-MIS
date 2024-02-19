@@ -45,7 +45,7 @@ export default {
                 <div v-for="(report, index) in officeDropdown" :key="index" class="progress">
                     <div style="font-weight: 600; width: 100%;" class="report">{{ report.report }}</div>
                     <div style="width:100%" class="progress-container">
-                        <progress max="100" :value="70" class="progress-bar"></progress> 
+                        <progress max="100" :value="85" class="progress-bar"></progress> 
                         <div class="value">85%</div>
                     </div>
                 </div>

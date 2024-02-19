@@ -71,7 +71,7 @@ nav    {
     outline: none;
 }
 .container{
-    height: 130vh;
+    height: 150vh;
 }
 .title-box, .navigation-container   {
     height: inherit;
