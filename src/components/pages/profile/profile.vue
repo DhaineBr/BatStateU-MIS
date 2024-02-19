@@ -17,7 +17,6 @@ export default {
             };
             progressObjects.push(progressObject);
         }
-
         // activities dummy data
         const acronym = [
             'PBB', 
@@ -35,10 +34,9 @@ export default {
         const activities = [];
         for (let i = 0; i < 4; i++) {
             const activity = {
-               icon: acronym[i % acronym.length],
-               name: name[i % name.length],
-               due: due[i % due.length]
-
+                icon: acronym[i % acronym.length],
+                name: name[i % name.length],
+                due: due[i % due.length]
             };
             activities.push(activity);
         }

@@ -10,7 +10,7 @@
         <RouterLink to="/landing/profile" class="nav-button">Profile</RouterLink>
         <RouterLink to="/landing/dashboard/overview" class="nav-button">Dashboard</RouterLink>
         <RouterLink to="/landing/dataset" class="nav-button">Dataset</RouterLink>
-        <RouterLink to="/landing/pbb" class="nav-button">PBB</RouterLink>
+        <RouterLink to="/landing/pbb/status-dashboard" class="nav-button">PBB</RouterLink>
         <RouterLink to="/landing/offices" class="nav-button">Offices</RouterLink>
     </nav>
     <div class="content">
