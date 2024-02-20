@@ -57,16 +57,16 @@ export default {
             <div v-for="(indicator, index) in indicators" :key="index" style="margin: 2% 0 0 0" class="summary">
                 <div class="status"></div>
                 <div class="outcome">
-                    <mdicon name="check" class="status-icon"/> 
+                    <div class="icon-container"><mdicon name="check" class="status-icon"/></div> 
                     <div style="font-weight: 600" class="indicator">{{ indicator }}</div>
                 </div>
                 <v-table>
                     <tbody>
-                    <tr v-for="(form, index) in forms" :key="index">
-                        <td style="color: #46F381; width: 5%"><mdicon name="circle"/></td>
-                        <td>{{ form }}</td>
-                        <td>07-12-2021</td>
-                    </tr>
+                        <tr v-for="(form, index) in forms" :key="index">
+                            <td style="color: #46F381; width: 5%"><mdicon name="circle"/></td>
+                            <td>{{ form }}</td>
+                            <td>07-12-2021</td>
+                        </tr>
                     </tbody>
                 </v-table>
                 <div class="button-container">
@@ -99,10 +99,16 @@ export default {
     width: 100%;
     margin: 0 0 2.5% 0;
 }
+.icon-container {
+    width: 3%;
+    font-size: 1.65vw;
+}
 .status-icon    {
-    border-radius: 1rem;
+    color: #46F381;
+    background-color: transparent;
     border: solid;
-    color: #46F381
+    border-radius: 3rem;
+    width: 3.5%;
 }
 .summary, .v-table    {
     font-size: 1vw;
@@ -110,6 +116,12 @@ export default {
 .v-table    {
     width: 90%;
     margin: 0 0 0 auto
+}
+.v-table tr:nth-child(odd) {
+    background-color: #F5F5F5;
+}
+.v-table tr:nth-child(even) {
+    background-color: #C1C1C1;
 }
 .button-container   {
     width: 30%;

@@ -27,15 +27,6 @@ export default {
   },
   data() {
 
-  var community = localStorage.getItem('./../../../assets/community.svg');
-  var sports = localStorage.getItem('./../../../assets/sports.svg');
-  var trees = localStorage.getItem('./../../../assets/trees.svg');
-  var gift = localStorage.getItem('./../../../assets/gift.svg');
-  var plant = localStorage.getItem('./../../../assets/plant.svg');
-  var blood = localStorage.getItem('./../../../assets/blood.svg');
-  var food = localStorage.getItem('./../../../assets/blood.svg');
-
-  const icons = [community, sports, trees, gift, plant, blood, food]
   const services = [
     'Fund Raising for Community Development',
     'Youth sports development, environment camps',
@@ -51,7 +42,6 @@ export default {
   const serviceObjects = [];
   for (let i = 0; i < 7; i++) {
     const serviceObject = {
-      icon: icons[i],
       figure: (Math.floor(Math.random() * 10) + 20),
       serviceName: services[i],
     };

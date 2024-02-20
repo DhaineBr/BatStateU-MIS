@@ -7,8 +7,21 @@ export default {
     Dashboard,
   },
   data() {
+    const offices = [
+      'Faculty and Staff Members',
+      'Students',
+      'Admissions',
+      'Enrollment',
+      'Graduate Degrees Conferred',
+      'Career Path and Employment Status',
+      'Research',
+      'International',
+      'Industry - University - Government Collaboration',
+      'Finance'
+    ]
     return {
       isDashboardHidden: false, 
+      offices
     };
   },
   methods: {
@@ -22,18 +35,10 @@ export default {
     <div class="container">
         <nav>
             <div class="top">
-                <div class="backdrop"><div class="card">Faculty and Staff Members</div></div>
-                <div class="backdrop"><RouterLink to="/landing/studentfactbook" class="card" @click="hideDashboard">Students</RouterLink></div>
-                <div class="backdrop"><div class="card">Admissions</div></div>
-                <div class="backdrop"><div class="card">Enrollment</div></div>
-                <div class="backdrop"><div class="card">Graduate Degrees Conferred</div></div>
-            </div>
-            <div class="bottom">
-                <div class="backdrop"><div class="card">Career Path and Employment Status</div></div>
-                <div class="backdrop"><div class="card">Research</div></div>
-                <div class="backdrop"><div class="card">International</div></div>
-                <div class="backdrop"><div class="card">Industry - University - Government Collaboration</div></div>
-                <div class="backdrop"><div class="card">Finance</div></div>
+                <div v-for="(office, index) in offices" :key="index" class="backdrop">
+                  <RouterLink :to="`/landing/${office.toLowerCase().replace(/\s+/g, '-')}`"
+                  class="card" @click="hideDashboard">{{ office }}</RouterLink>
+                </div>
             </div>
         </nav>
     </div>
@@ -47,10 +52,10 @@ export default {
 .container  {
     height: 65vh;
 }
-.top, .bottom    {
-    height: 32.5vh;
+.top {
+    height: 65vh;
     display: flex;
-    flex-direction: row;
+    flex-flow: row wrap;
     align-items: center;
     justify-content: center;
 }

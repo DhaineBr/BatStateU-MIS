@@ -92,12 +92,12 @@ const router = createRouter({
                   name: 'misfactbook',
                   component: misfactbookVue
                 },
-                {
-                  path: '/landing/studentfactbook',
-                  name: 'studentfactbook',
-                  component: studentfactbookVue
-                }
               ]
+            },
+            {
+              path: '/landing/students',
+              name: 'students',
+              component: studentfactbookVue
             },
             {
               path: '/landing/dataset',
