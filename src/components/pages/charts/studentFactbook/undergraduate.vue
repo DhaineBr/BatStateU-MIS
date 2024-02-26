@@ -28,6 +28,7 @@ export default {
         labels: labels ,
         
         datasets: [ { 
+            maxBarThickness: 20,
             backgroundColor: '#D00412',
             data: [
                 randomNumber1, 
@@ -43,6 +44,7 @@ export default {
             stack: 'stack' 
           },
           { 
+            maxBarThickness: 20,
             backgroundColor: '#06ECC3',
             data: [randomNumber1, 
             randomNumber2, 
@@ -62,11 +64,17 @@ export default {
         responsive: true,
         indexAxis: 'x',
         scales: {
-            
+          x: {
+            grid: {
+            display: false,
+            }
+          },            
           y: {
             display: false,
             stacked: true ,
-            
+            grid: {
+            display: false,
+            }
           }
         },
         plugins: {
