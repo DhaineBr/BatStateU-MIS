@@ -28,6 +28,11 @@ export default {
         scales: {
           x: {
             display: false,
+          },
+          y: {
+            grid: {
+              display: false
+            }
           }},
         plugins: {
           title: {

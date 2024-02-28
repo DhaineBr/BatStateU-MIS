@@ -43,6 +43,11 @@ export default {
         scales: {
           y: {
             display: false,
+          },
+          x: {
+            grid: {
+              display: false
+            }
           }},
         plugins: {
           title: {

@@ -274,6 +274,7 @@ select  {
 }
 .calendar-container, .activities  {
     box-shadow: rgba(0, 0, 0, 0.16) 0rem 0.0625rem 0.25rem;
+    background-color: white;
 }
 .task-box   {
     margin: 2vh 0
@@ -298,7 +299,6 @@ select  {
 /* Global */
 *   {
     outline: none;
-    border-width: 0.01rem;
 }
 .perf-stats, .task-detail, .icon {
     display: flex;

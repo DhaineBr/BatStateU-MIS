@@ -36,7 +36,12 @@ export default {
         indexAxis: 'y',
         scales: {
           x: {
-            display: false, // Hide x-axis labels
+            display: false, 
+          },
+          y: {
+            grid: {
+              display: false
+            }
           }},
         plugins: {
           title: {

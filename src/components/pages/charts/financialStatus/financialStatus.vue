@@ -47,6 +47,9 @@ export default {
         scales: {
             y: {
                 display: true,
+                grid: {
+                  display: false
+                }
             },
             x:  {
                 display: false
